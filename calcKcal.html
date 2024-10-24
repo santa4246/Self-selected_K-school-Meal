@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>키오스크 음식 선택</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <h1>식단 선택 키오스크</h1>
+    
+    <div class="category" id="categories">
+        <button class="food" data-category="밥">밥</button>
+        <button data-category="국">국</button>
+        <button data-category="메인메뉴">메인메뉴</button>
+        <button data-category="사이드메뉴">사이드메뉴</button>
+        <button data-category="김치">김치</button>
+        <button data-category="후식">후식</button>
+    </div>
+
+    <div id="foodSelection" class="food-selection">
+        <h3>음식을 선택하세요:</h3>
+        <div id="foodOptions"></div>
+    </div>
+
+    <div id="tray">
+        <h3>식판</h3>
+        <ul id="trayItems"></ul>
+    </div>
+
+    <div id="calories">
+        <button id="calculateCaloriesButton">열량 계산</button>
+        <p id="totalCalories">총 열량: 0 Kcal</p>
+    </div>
+
+
+    <script src="main.js"></script>
+</body>
+</html>
