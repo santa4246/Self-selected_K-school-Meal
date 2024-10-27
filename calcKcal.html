@@ -3,18 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>키오스크 음식 선택</title>
+    <title>자율선택급식</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <h1>식단 선택 키오스크</h1>
+    <h1>자율선택급식</h1>
     
     <div class="category" id="categories">
         <button class="food" data-category="밥">밥</button>
         <button data-category="국">국</button>
-        <button data-category="메인메뉴">메인메뉴</button>
-        <button data-category="사이드메뉴">사이드메뉴</button>
+        <button data-category="주찬">주찬</button>
+        <button data-category="부찬">부찬</button>
         <button data-category="김치">김치</button>
         <button data-category="후식">후식</button>
     </div>
@@ -26,8 +26,9 @@
 
     <div id="tray">
         <h3>식판</h3>
-        <ul id="trayItems"></ul>
+        <div id="food-images"></div> <!-- 음식 이미지를 표시할 영역 -->
     </div>
+    
 
     <div id="calories">
         <button id="calculateCaloriesButton">열량 계산</button>
