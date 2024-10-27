@@ -10,12 +10,30 @@ const totalCaloriesP = document.getElementById('totalCalories');
 
 let trayItems = {}; // 각 카테고리에서 하나의 음식만 선택되도록 객체로 변경
 let foodData = {
-    '밥': [{ name: '흰쌀밥', calories: 300 }, { name: '현미밥', calories: 250 }],
-    '국': [{ name: '미역국', calories: 150 }, { name: '된장국', calories: 180 }],
-    '메인메뉴': [{ name: '불고기', calories: 400 }, { name: '닭갈비', calories: 450 }],
-    '사이드메뉴': [{ name: '계란말이', calories: 200 }, { name: '샐러드', calories: 100 }],
-    '김치': [{ name: '배추김치', calories: 50 }, { name: '깍두기', calories: 40 }],
-    '후식': [{ name: '사과', calories: 80 }, { name: '바나나', calories: 90 }]
+    '밥': [
+        { name: '흰쌀밥', calories: 300, carbs: 68, protein: 5, fat: 1 },
+        { name: '현미밥', calories: 250, carbs: 52, protein: 6, fat: 2 }
+    ],
+    '국': [
+        { name: '미역국', calories: 150, carbs: 3, protein: 10, fat: 8 },
+        { name: '된장국', calories: 180, carbs: 5, protein: 12, fat: 9 }
+    ],
+    '메인메뉴': [
+        { name: '불고기', calories: 400, carbs: 10, protein: 25, fat: 30 },
+        { name: '닭갈비', calories: 450, carbs: 15, protein: 35, fat: 20 }
+    ],
+    '사이드메뉴': [
+        { name: '계란말이', calories: 200, carbs: 3, protein: 15, fat: 15 },
+        { name: '샐러드', calories: 100, carbs: 5, protein: 2, fat: 8 }
+    ],
+    '김치': [
+        { name: '배추김치', calories: 50, carbs: 10, protein: 1, fat: 0 },
+        { name: '깍두기', calories: 40, carbs: 8, protein: 1, fat: 0 }
+    ],
+    '후식': [
+        { name: '사과', calories: 80, carbs: 20, protein: 0, fat: 0 },
+        { name: '바나나', calories: 90, carbs: 22, protein: 1, fat: 0 }
+    ]
 };
 
 // 카테고리 선택 시 음식 옵션 표시
@@ -57,8 +75,30 @@ function updateTray() {
     caloriesDiv.style.display = 'block';
 }
 
-// 열량 계산
+// 총 열량 및 비율 계산
 document.getElementById('calculateCaloriesButton').addEventListener('click', () => {
-    let totalCalories = Object.values(trayItems).reduce((total, item) => total + item.calories, 0);
+    let totalCalories = 0;
+    let totalCarbs = 0;
+    let totalProtein = 0;
+    let totalFat = 0;
+
+    Object.values(trayItems).forEach(item => {
+        totalCalories += item.calories;
+        totalCarbs += item.carbs;
+        totalProtein += item.protein;
+        totalFat += item.fat;
+    });
+
     totalCaloriesP.textContent = `총 열량: ${totalCalories} Kcal`;
+
+    // 비율 계산
+    const totalNutrients = totalCarbs * 4 + totalProtein * 4 + totalFat * 9;
+    const carbRatio = ((totalCarbs * 4) / totalNutrients * 100).toFixed(1);
+    const proteinRatio = ((totalProtein * 4) / totalNutrients * 100).toFixed(1);
+    const fatRatio = ((totalFat * 9) / totalNutrients * 100).toFixed(1);
+
+    // 비율 표시
+    const ratioDisplay = document.createElement('p');
+    ratioDisplay.textContent = `탄:단:지 비율 = ${carbRatio}% : ${proteinRatio}% : ${fatRatio}%`;
+    caloriesDiv.appendChild(ratioDisplay);
 });
