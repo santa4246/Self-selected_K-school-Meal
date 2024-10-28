@@ -6,6 +6,7 @@
     <title>자율선택급식</title>
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/selectMeal.css">
+    <link rel="stylesheet" href="css/modal.css">
 </head>
 <body>
 
@@ -36,7 +37,19 @@
         <p id="totalCalories">총 열량: 0 Kcal</p>
     </div>
 
+<!-- 모달 -->
+<div class="modal-overlay"></div>
+<div class="modal">
+    <p>선택한 음식을 담으시겠습니까?</p>
+    <button id="add-btn">담기</button>
+    <button id="cancel-btn">취소</button>
+</div>
 
-    <script src="js/selectMeal.js"></script>
+<div id="result"></div>
+
+
+
+<script src="js/selectMeal.js"></script>
+<script src="js/modal.js"></script>
 </body>
 </html>

@@ -54,27 +54,33 @@ categoriesDiv.addEventListener('click', (e) => {
 
 // 선택된 카테고리의 음식 옵션을 표시
 function showFoodOptions(category) {
+    let buttonId = 0;
     foodOptionsDiv.innerHTML = '';
     foodData[category].forEach(food => {
         const button = document.createElement('button');
         button.textContent = `${food.name} (${food.calories} Kcal)`;
         button.dataset.image = food.image; // 이미지 경로 추가
-        button.addEventListener('click', () => addToTray(category, food));
+        button.className = 'open-modal-btn';
+        button.dataset.btnId = buttonId++;
+        button.dataset.btnCategory = category;
+        button.dataset.btnFood = JSON.stringify(food);
         foodOptionsDiv.appendChild(button);
     });
+
     foodSelectionDiv.style.display = 'block';
+
+    modalAction();
 }
 
 // 음식 선택 시 식판 업데이트하여 하나의 음식만 추가되도록 구현
 function addToTray(category, food) {
     // 동일 카테고리에서 선택된 음식이 있으면 대체
-    trayItems[category] = food;
+    trayItems[category] = JSON.parse(food);
     updateTray();
 
-
     // 선택된 음식의 이미지를 식판에 추가
-    const foodImagesContainer = document.getElementById('food-images');
-    foodImagesContainer.innerHTML = ''; // 기존 이미지를 지우고 새로 추가
+    // const foodImagesContainer = document.getElementById('food-images');
+    // foodImagesContainer.innerHTML = ''; // 기존 이미지를 지우고 새로 추가
 
     if (food.image) {
     const foodImage = document.createElement('img');
@@ -83,7 +89,7 @@ function addToTray(category, food) {
     foodImage.style.height = '100px'; // 원하는 크기로 조정
     foodImage.style.margin = '5px'; // 간격 조정
 
-    foodImagesContainer.appendChild(foodImage); // 식판에 이미지 추가
+    // foodImagesContainer.appendChild(foodImage); // 식판에 이미지 추가
 }
 }
 
