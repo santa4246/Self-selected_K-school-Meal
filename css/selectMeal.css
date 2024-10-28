@@ -23,7 +23,7 @@ body {
     align-items: center;
 }
 #tray {
-    background-image: url('image/tray-background.png'); /* 배경 이미지 경로 */
+    background-image: url('../image/tray-background.png'); /* 배경 이미지 경로 */
     background-size: cover; /* 배경 이미지 크기 조절 */
     background-position: center; /* 배경 이미지 위치 조정 */
     padding: 20px; /* 여백 */

@@ -4,37 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>메인 페이지!</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            margin-top: 100px;
-        }
-
-        #mainButton {
-            padding: 15px 30px;
-            font-size: 24px;
-            background-color: black;
-            color: white;
-            border: none;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
-
-        #mainButton:hover {
-            background-color: darkgray;
-        }
-    </style>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/index.css">
 </head>
 <body>
     <h1>환영합니다</h1>
     <button id="mainButton">식단 선택 시작</button>
-
-    <script>
-        document.getElementById('mainButton').addEventListener('click', () => {
-            // 식단 선택 페이지로 이동
-            window.location.href = 'calcKcal.html';
-        });
-    </script>
+    <script src="js/index.js"></script>
 </body>
 </html>
