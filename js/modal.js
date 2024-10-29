@@ -8,11 +8,23 @@ function modalAction(category) {
       selectedButtonId = event.target.getAttribute('data-btn-id');
       modal.style.display = 'block';
       overlay.style.display = 'block';
+
+      let selectedFoodName = document.getElementById('selectedFoodName');
+      let selectedFoodCalories = document.getElementById('selectedFoodCalories');
+      let selectedFoodCarbs = document.getElementById('selectedFoodCarbs');
+      let selectedFoodProtein = document.getElementById('selectedFoodProtein');
+      let selectedFoodFat = document.getElementById('selectedFoodFat');
+      let foodInfo = JSON.parse(event.target.getAttribute('data-btn-food'));
+      
+      selectedFoodName.textContent = `음식 : ${foodInfo.name}`;
+      selectedFoodCalories.textContent = `칼로리 : ${foodInfo.calories}`;
+      selectedFoodCarbs.textContent = `탄수화물 : ${foodInfo.carbs}`;
+      selectedFoodProtein.textContent = `단백질 : ${foodInfo.protein}`;
+      selectedFoodFat.textContent = `지방 : ${foodInfo.fat}`;
     });
   });
 
   document.getElementById('add-btn').addEventListener('click', () => {
-    // result.textContent = `버튼 ${selectedButtonId}이(가) 선택되었습니다.`;
     let category = document.querySelectorAll('.open-modal-btn')[selectedButtonId].getAttribute('data-btn-category');
     let food = document.querySelectorAll('.open-modal-btn')[selectedButtonId].getAttribute('data-btn-food');
     addToTray(category, food)

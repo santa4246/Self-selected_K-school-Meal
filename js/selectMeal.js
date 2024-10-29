@@ -12,7 +12,7 @@ let trayItems = {}; // 각 카테고리에서 하나의 음식만 선택되도�
 let foodData = {
     '밥': [
         { name: '찹쌀밥', calories: 300, carbs: 68, protein: 5, fat: 1 },
-        { name: '흑미밥', calories: 250, carbs: 52, protein: 6, fat: 2, image: '..\\image\\흑미밥.png' },
+        { name: '흑미밥', calories: 250, carbs: 52, protein: 6, fat: 2, image: 'image/밥/흑미밥.png' },
         { name: '보리밥', calories: 250, carbs: 52, protein: 6, fat: 2 }
     ],
     '국': [
@@ -58,7 +58,7 @@ function showFoodOptions(category) {
     foodOptionsDiv.innerHTML = '';
     foodData[category].forEach(food => {
         const button = document.createElement('button');
-        button.textContent = `${food.name} (${food.calories} Kcal)`;
+        button.textContent = `${food.name}`;
         button.dataset.image = food.image; // 이미지 경로 추가
         button.className = 'open-modal-btn';
         button.dataset.btnId = buttonId++;
@@ -69,27 +69,29 @@ function showFoodOptions(category) {
 
     foodSelectionDiv.style.display = 'block';
 
-    modalAction();
+    modalAction(category);
 }
 
 // 음식 선택 시 식판 업데이트하여 하나의 음식만 추가되도록 구현
 function addToTray(category, food) {
     // 동일 카테고리에서 선택된 음식이 있으면 대체
-    trayItems[category] = JSON.parse(food);
+    food = JSON.parse(food);
+    trayItems[category] = food;
     updateTray();
 
     // 선택된 음식의 이미지를 식판에 추가
-    // const foodImagesContainer = document.getElementById('food-images');
-    // foodImagesContainer.innerHTML = ''; // 기존 이미지를 지우고 새로 추가
+    const foodImagesContainer = document.getElementById('trayItems');
+    foodImagesContainer.innerHTML = ''; // 기존 이미지를 지우고 새로 추가
 
     if (food.image) {
     const foodImage = document.createElement('img');
     foodImage.src = food.image; // 선택된 음식의 이미지 경로 사용
+    foodImage.alt = '선택된 음식 이미지'; // 이미지 설명
     foodImage.style.width = '100px'; // 원하는 크기로 조정
     foodImage.style.height = '100px'; // 원하는 크기로 조정
     foodImage.style.margin = '5px'; // 간격 조정
 
-    // foodImagesContainer.appendChild(foodImage); // 식판에 이미지 추가
+    foodImagesContainer.appendChild(foodImage); // 식판에 이미지 추가
 }
 }
 
@@ -98,7 +100,7 @@ function updateTray() {
     trayItemsUl.innerHTML = '';
     Object.values(trayItems).forEach(item => {
         const li = document.createElement('li');
-        li.textContent = `${item.name} (${item.calories} Kcal)`;
+        li.textContent = `${item.name}`;
         trayItemsUl.appendChild(li);
     });
     tray.style.display = 'block';
