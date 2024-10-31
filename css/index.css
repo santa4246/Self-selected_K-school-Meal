@@ -1,19 +1,27 @@
-body {
-  font-family: Arial, sans-serif;
-  text-align: center;
-  margin-top: 100px;
+.multi-lang {
+  margin: 20px 20px 200px 0;
+  text-align: right;
 }
 
-#mainButton {
-  padding: 15px 30px;
-  font-size: 24px;
-  background-color: black;
-  color: white;
-  border: none;
+.multi-lang img {
+  width: 50px;
+  height: 50px;
   cursor: pointer;
-  transition: background-color 0.3s;
 }
 
-#mainButton:hover {
-  background-color: darkgray;
+.title-desc {
+  margin-bottom: 40px;
+}
+
+.title-desc > h1 {
+  font-size: 40px;
+}
+
+.contents-desc {
+  margin-bottom: 150px;
+}
+
+.produce-desc {
+  font-size: 12px;
+  font-weight: 200;
 }

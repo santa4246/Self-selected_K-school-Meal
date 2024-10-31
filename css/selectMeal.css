@@ -43,7 +43,7 @@ h1 {
 }
 
 #tray {
-    background-image: url('../image/tray-background.png');
+    background-image: url('../images/tray-background.png');
     background-size: cover;
     background-position: center;
     padding: 20px;
