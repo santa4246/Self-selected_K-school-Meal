@@ -1,9 +1,22 @@
+@font-face {
+  font-family: "KimjungchulMyungjo";
+  src: url("../font/KimjungchulMyungjo-Bold.ttf");
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: "KimjungchulMyungjo";
+  src: url("../font/NanumGothic.ttf");
+  font-weight: bold;
+}
+
 body {
   /* background-color: #F3F1EE; */
   background-image: url('../images/background/bg-1.jpg');
   font-size: 14px;
   font-weight: 500;
   text-align: center;
+  font-family: "KimjungchulMyungjo";
 }
 
 .custom-button {
