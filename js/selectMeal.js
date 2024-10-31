@@ -12,7 +12,7 @@ let trayItems = {}; // 각 카테고리에서 하나의 음식만 선택되도�
 let foodData = {
     '밥': [
         { name: '찹쌀밥', calories: 300, carbs: 68, protein: 5, fat: 1 },
-        { name: '흑미밥', calories: 250, carbs: 52, protein: 6, fat: 2, image: 'images/흑미밥.png' },
+        { name: '흑미밥', calories: 250, carbs: 52, protein: 6, fat: 2, image: 'images/food/흑미밥.png' },
         { name: '보리밥', calories: 250, carbs: 52, protein: 6, fat: 2 }
     ],
     '국': [

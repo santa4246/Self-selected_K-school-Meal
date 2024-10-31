@@ -1,5 +1,6 @@
 body {
-  background-color: #F3F1EE;
+  /* background-color: #F3F1EE; */
+  background-image: url('../images/background/bg-1.jpg');
   font-size: 14px;
   font-weight: 500;
   text-align: center;
