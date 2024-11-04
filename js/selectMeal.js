@@ -114,6 +114,12 @@ document.getElementById('calculateCaloriesButton').addEventListener('click', () 
     let totalProtein = 0;
     let totalFat = 0;
 
+    // 기존 비율 정보 제거
+    const existingRatioDisplay = document.getElementById('ratioDisplay');
+    if (existingRatioDisplay) {
+        existingRatioDisplay.remove();
+    }
+
     Object.values(trayItems).forEach(item => {
         totalCalories += item.calories;
         totalCarbs += item.carbs;
@@ -131,6 +137,7 @@ document.getElementById('calculateCaloriesButton').addEventListener('click', () 
 
     // 비율 표시
     const ratioDisplay = document.createElement('p');
+    ratioDisplay.id = 'ratioDisplay';  // 새로운 비율 표시 ID 설정
     ratioDisplay.textContent = `탄:단:지 비율 = ${carbRatio}% : ${proteinRatio}% : ${fatRatio}%`;
     caloriesDiv.appendChild(ratioDisplay);
 });
