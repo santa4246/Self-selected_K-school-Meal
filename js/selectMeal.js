@@ -13,12 +13,11 @@ let foodData = {
     '밥': [
         { name: '찹쌀밥', calories: 300, carbs: 68, protein: 5, fat: 1 },
         { name: '흑미밥', calories: 250, carbs: 52, protein: 6, fat: 2, image: 'images/food/흑미밥.png' },
-        { name: '보리밥', calories: 250, carbs: 52, protein: 6, fat: 2 }
+        { name: '약콩밥', calories: 250, carbs: 52, protein: 6, fat: 2 }
     ],
     '국': [
         { name: '한우미역국', calories: 150, carbs: 3, protein: 10, fat: 8 },
         { name: '닭미역국', calories: 180, carbs: 5, protein: 12, fat: 9 },
-        { name: '바지락미역국', calories: 180, carbs: 5, protein: 12, fat: 9 },
         { name: '들깨미역국', calories: 180, carbs: 5, protein: 12, fat: 9 }
     ],
     '주찬': [
