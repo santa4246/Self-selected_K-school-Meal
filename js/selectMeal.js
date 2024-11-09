@@ -3,6 +3,7 @@
 const categoriesDiv = document.getElementById('categories');
 const foodSelectionDiv = document.getElementById('foodSelection');
 const foodOptionsDiv = document.getElementById('foodOptions');
+const foodOptionsDescDiv = document.getElementById('foodOptionsDesc');
 const tray = document.getElementById('tray');
 const trayItemsUl = document.getElementById('trayItems');
 const caloriesDiv = document.getElementById('calories');
@@ -11,35 +12,35 @@ const totalCaloriesP = document.getElementById('totalCalories');
 let trayItems = {}; // 각 카테고리에서 하나의 음식만 선택되도록 객체로 변경
 let foodData = {
     '밥': [
-        { name: '찹쌀밥', calories: 300, carbs: 68, protein: 5, fat: 1, image: 'images/food/' },
+        { name: '찹쌀밥', calories: 300, carbs: 68, protein: 5, fat: 1, image: 'images/food/찹쌀밥.png' },
         { name: '흑미밥', calories: 250, carbs: 52, protein: 6, fat: 2, image: 'images/food/흑미밥.png' },
-        { name: '약콩밥', calories: 250, carbs: 52, protein: 6, fat: 2, image: 'images/food/' }
+        { name: '약콩밥', calories: 250, carbs: 52, protein: 6, fat: 2, image: 'images/food/약콩밥.png' }
     ],
     '국': [
-        { name: '한우미역국', calories: 150, carbs: 3, protein: 10, fat: 8, image: 'images/food/' },
-        { name: '닭미역국', calories: 180, carbs: 5, protein: 12, fat: 9, image: 'images/food/' },
-        { name: '들깨미역국', calories: 180, carbs: 5, protein: 12, fat: 9, image: 'images/food/' }
+        { name: '한우미역국', calories: 150, carbs: 3, protein: 10, fat: 8, image: 'images/food/한우미역국.png' },
+        { name: '닭미역국', calories: 180, carbs: 5, protein: 12, fat: 9, image: 'images/food/닭미역국.png' },
+        { name: '들깨미역국', calories: 180, carbs: 5, protein: 12, fat: 9, image: 'images/food/들깨미역국.png' }
     ],
     '주찬': [
-        { name: '한우갈비찜', calories: 400, carbs: 10, protein: 25, fat: 30, image: 'images/food/' },
-        { name: '돼지매운갈비찜', calories: 450, carbs: 15, protein: 35, fat: 20, image: 'images/food/' },
-        { name: '안동찜닭', calories: 180, carbs: 5, protein: 12, fat: 9, image: 'images/food/' },
-        { name: '고등어김치찜', calories: 180, carbs: 5, protein: 12, fat: 9, image: 'images/food/' }
+        { name: '한우갈비찜', calories: 400, carbs: 10, protein: 25, fat: 30, image: 'images/food/한우갈비찜.png' },
+        { name: '돼지매운갈비찜', calories: 450, carbs: 15, protein: 35, fat: 20, image: 'images/food/돼지매운갈비찜.png' },
+        { name: '안동찜닭', calories: 180, carbs: 5, protein: 12, fat: 9, image: 'images/food/안동찜닭.png' },
+        { name: '고등어김치찜', calories: 180, carbs: 5, protein: 12, fat: 9, image: 'images/food/고등어김치찜.png' }
     ],
     '부찬': [
-        { name: '콩나물무침', calories: 200, carbs: 3, protein: 15, fat: 15, image: 'images/food/' },
-        { name: '고사리볶음', calories: 100, carbs: 5, protein: 2, fat: 8, image: 'images/food/' },
-        { name: '시금치고추장무침', calories: 100, carbs: 5, protein: 2, fat: 8, image: 'images/food/' },
-        { name: '새송이버섯볶음', calories: 100, carbs: 5, protein: 2, fat: 8, image: 'images/food/' }
+        { name: '콩나물무침', calories: 200, carbs: 3, protein: 15, fat: 15, image: 'images/food/콩나물무침.png' },
+        { name: '고사리볶음', calories: 100, carbs: 5, protein: 2, fat: 8, image: 'images/food/고사리볶음.png' },
+        { name: '시금치고추장무침', calories: 100, carbs: 5, protein: 2, fat: 8, image: 'images/food/시금치고추장무침.png' },
+        { name: '새송이버섯볶음', calories: 100, carbs: 5, protein: 2, fat: 8, image: 'images/food/새송이버섯볶음.png' }
     ],
     '김치': [
-        { name: '배추김치', calories: 50, carbs: 10, protein: 1, fat: 0, image: 'images/food/' },
-        { name: '깍두기', calories: 40, carbs: 8, protein: 1, fat: 0, image: 'images/food/' },
-        { name: '백김치', calories: 40, carbs: 8, protein: 1, fat: 0, image: 'images/food/' }
+        { name: '배추김치', calories: 50, carbs: 10, protein: 1, fat: 0, image: 'images/food/배추김치.png배추김치.png' },
+        { name: '깍두기', calories: 40, carbs: 8, protein: 1, fat: 0, image: 'images/food/깍두기.png깍두기.png' },
+        { name: '동치미', calories: 40, carbs: 8, protein: 1, fat: 0, image: 'images/food/동치미.png동치미.png' }
     ],
     '후식': [
-        { name: '식혜', calories: 80, carbs: 20, protein: 0, fat: 0, image: 'images/food/' },
-        { name: '미숫가루', calories: 90, carbs: 22, protein: 1, fat: 0, image: 'images/food/' }
+        { name: '식혜', calories: 80, carbs: 20, protein: 0, fat: 0, image: 'images/food/식혜.png' },
+        { name: '미숫가루', calories: 90, carbs: 22, protein: 1, fat: 0, image: 'images/food/미숫가루.png' }
     ]
 };
 
@@ -55,15 +56,22 @@ categoriesDiv.addEventListener('click', (e) => {
 function showFoodOptions(category) {
     let buttonId = 0;
     foodOptionsDiv.innerHTML = '';
+    foodOptionsDescDiv.innerHTML = '';
+
     foodData[category].forEach(food => {
         const button = document.createElement('button');
         button.textContent = `${food.name}`;
         button.dataset.image = food.image; // 이미지 경로 추가
+        button.style.backgroundImage = `url("${food.image}")`;
         button.className = 'open-modal-btn';
         button.dataset.btnId = buttonId++;
         button.dataset.btnCategory = category;
         button.dataset.btnFood = JSON.stringify(food);
         foodOptionsDiv.appendChild(button);
+
+        const p = document.createElement('p');
+        p.textContent = `${food.name}`;
+        foodOptionsDescDiv.appendChild(p);
     });
 
     foodSelectionDiv.style.display = 'block';

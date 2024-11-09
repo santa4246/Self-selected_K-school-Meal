@@ -11,21 +11,22 @@
 </head>
 <body>
 
-    <h1 data-i18n="">자율 선택 급식 체험</h1>
-    
-    <div class="category" id="categories">
-        <button class="food" data-category="밥">밥</button>
-        <button data-category="국">국</button>
-        <button data-category="주찬">주찬</button>
-        <button data-category="부찬">부찬</button>
-        <button data-category="김치">김치</button>
-        <button data-category="후식">후식</button>
+    <div class="header">
+        <h1 data-i18n="">자율 선택 급식 체험</h1>
+        
+        <div class="category" id="categories">
+            <button class="food" data-category="밥">밥</button>
+            <button data-category="국">국</button>
+            <button data-category="주찬">주찬</button>
+            <button data-category="부찬">부찬</button>
+            <button data-category="김치">김치</button>
+            <button data-category="후식">후식</button>
+        </div>
     </div>
-    <img src="" alt="">
 
     <div id="foodSelection" class="food-selection">
-        <h3>음식을 선택하세요:</h3>
         <div id="foodOptions"></div>
+        <div id="foodOptionsDesc"></div>
     </div>
 
     <div id="tray">
@@ -34,7 +35,7 @@
     
 
     <div id="calories">
-        <button id="calculateCaloriesButton">열량 계산</button>
+        <button id="calculateCaloriesButton">영양량 계산하기</button>
         <p id="totalCalories">총 열량: 0 Kcal</p>
     </div>
 
