@@ -9,29 +9,37 @@
     <link rel="stylesheet" href="css/index.css">
 </head>
 <body>
-    <div class="language-switch">
-        <button onclick="setLanguage('ko')">한국어</button>
-        <button onclick="setLanguage('en')">English</button>
+        <header>
+            <div class="language-switch">
+                <button class="set-korea" onclick="setLanguage('ko')">한국어</button>
+                <button class="set-usa" onclick="setLanguage('en')">English</button>
+            </div>
+        </header>
+    <div class="container">
+        <main>
+            <div class="title-desc">
+                <h1 data-i18n="index_title">자율 선택 급식 체험</h1>
+                <p data-i18n="index_title_desc">자율, 균형, 미래, 선택급식이 들어갔으면 좋겠다.</p>
+            </div>
+            <button class="start-button custom-button" id="mainButton">Start</button>
+
+            <p data-i18n="index_content_desc" class="contents-desc">
+                우리 설명~ 두 세 줄 정도 지금부터 아무 말이나 해보겠습니다. 아무도 읽지 않을 수도 있지만 <br>
+                그래도 우리의 제작 의도와 목적을 설명해두면 좋을 것 같아요. <br>
+                두 줄은 너무 짧나 싶어서 세 줄 정도 쓰는 게 좋을 것 같은데 옆에 공간 너무 비어보여서 <br>
+                급식과 관련된 기구나 재료 사진이라도 넣을까봐요.
+            </p>
+        </main>
+
+        <footer>
+            <div class="bg-hand"></div>
+            <p data-i18n="index_produce" class="produce-desc">
+                영양교사 서아람, 조효현, 차슬기 제작 / 개발 자문 강민혁
+            </p>
+        </footer>
     </div>
 
-    <div class="title-desc">
-        <h1 data-i18n="">자율 선택 급식 체험</h1>
-        <p data-i18n="">자율, 균형, 미래, 선택급식이 들어갔으면 좋겠다.</p>
-    </div>
-    <button class="custom-button" id="mainButton">Start</button>
-
-    <p data-i18n="index_content_desc" class="contents-desc">
-        우리 설명~ 두 세 줄 정도 지금부터 아무 말이나 해보겠습니다. 아무도 읽지 않을 수도 있지만 <br>
-        그래도 우리의 제작 의도와 목적을 설명해두면 좋을 것 같아요. <br>
-        두 줄은 너무 짧나 싶어서 세 줄 정도 쓰는 게 좋을 것 같은데 옆에 공간 너무 비어보여서 <br>
-        급식과 관련된 기구나 재료 사진이라도 넣을까봐요.
-    </p>
-
-    <p data-i18n="" class="produce-desc">
-        영양교사 서아람, 조효현, 차슬기 제작 / 개발 자문 강민혁
-    </p>
-
-    <!-- <script src="js/multilang.js"></script> -->
+    <script src="js/multilang.js"></script>
     <script src="js/index.js"></script>
 </body>
 </html>

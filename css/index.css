@@ -1,13 +1,23 @@
 .language-switch {
-  margin: 20px 20px 200px 0;
+  margin: 20px 20px 160px 0;
   text-align: right;
 }
 
 .language-switch button {
   width: 70px;
   height: 70px;
-	padding: 8px 12px;
+  background-size: contain;
+  text-indent: -99999px;
+  border: none;
   cursor: pointer;
+}
+
+.set-korea {
+  background-image: url('../images/koreabutton.png');
+}
+
+.set-usa {
+  background-image: url('../images/usabutton.png');
 }
 
 .title-desc {
@@ -15,7 +25,14 @@
 }
 
 .title-desc > h1 {
-  font-size: 40px;
+  font-size: 50px;
+}
+
+.start-button {
+  background-image: url('../images/startbutton.png');
+  width: 195px;
+  height: 62px;
+  margin-bottom: 100px;
 }
 
 .contents-desc {
@@ -23,5 +40,17 @@
 }
 
 .produce-desc {
-  font-size: 12px;
+  font-size: 14px;
+}
+
+.bg-hand {
+  background-image: url('../images/hand.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: absolute;
+  top: 60vh;
+  right: 0;
+  width: 50vw;
+  height: auto;
+  aspect-ratio: 2 / 3;
 }
