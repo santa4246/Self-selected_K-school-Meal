@@ -19,19 +19,20 @@ let foodData = {
     '국': [
         { name: '한우미역국', calories: 150, carbs: 3, protein: 10, fat: 8, image: 'images/food/한우미역국.png' },
         { name: '닭미역국', calories: 180, carbs: 5, protein: 12, fat: 9, image: 'images/food/닭미역국.png' },
+        { name: '조갯살미역국', calories: 180, carbs: 5, protein: 12, fat: 9, image: 'images/food/조갯살미역국.png' },
         { name: '들깨미역국', calories: 180, carbs: 5, protein: 12, fat: 9, image: 'images/food/들깨미역국.png' }
     ],
     '주찬': [
         { name: '한우갈비찜', calories: 400, carbs: 10, protein: 25, fat: 30, image: 'images/food/한우갈비찜.png' },
-        { name: '돼지매운갈비찜', calories: 450, carbs: 15, protein: 35, fat: 20, image: 'images/food/돼지매운갈비찜.png' },
+        { name: '매운돼지갈비찜', calories: 450, carbs: 15, protein: 35, fat: 20, image: 'images/food/매운돼지갈비찜.png' },
         { name: '안동찜닭', calories: 180, carbs: 5, protein: 12, fat: 9, image: 'images/food/안동찜닭.png' },
-        { name: '고등어김치찜', calories: 180, carbs: 5, protein: 12, fat: 9, image: 'images/food/고등어김치찜.png' }
+        { name: '고등어무조림', calories: 180, carbs: 5, protein: 12, fat: 9, image: 'images/food/고등어무조림.png' }
     ],
     '부찬': [
         { name: '콩나물무침', calories: 200, carbs: 3, protein: 15, fat: 15, image: 'images/food/콩나물무침.png' },
         { name: '고사리볶음', calories: 100, carbs: 5, protein: 2, fat: 8, image: 'images/food/고사리볶음.png' },
         { name: '시금치고추장무침', calories: 100, carbs: 5, protein: 2, fat: 8, image: 'images/food/시금치고추장무침.png' },
-        { name: '새송이버섯볶음', calories: 100, carbs: 5, protein: 2, fat: 8, image: 'images/food/새송이버섯볶음.png' }
+        { name: '애호박나물', calories: 100, carbs: 5, protein: 2, fat: 8, image: 'images/food/애호박나물.png' }
     ],
     '김치': [
         { name: '배추김치', calories: 50, carbs: 10, protein: 1, fat: 0, image: 'images/food/배추김치.png배추김치.png' },
