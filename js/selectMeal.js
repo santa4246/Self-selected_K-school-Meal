@@ -35,9 +35,9 @@ let foodData = {
         { name: '애호박나물', calories: 100, carbs: 5, protein: 2, fat: 8, image: 'images/food/애호박나물.png' }
     ],
     '김치': [
-        { name: '배추김치', calories: 50, carbs: 10, protein: 1, fat: 0, image: 'images/food/배추김치.png배추김치.png' },
-        { name: '깍두기', calories: 40, carbs: 8, protein: 1, fat: 0, image: 'images/food/깍두기.png깍두기.png' },
-        { name: '동치미', calories: 40, carbs: 8, protein: 1, fat: 0, image: 'images/food/동치미.png동치미.png' }
+        { name: '배추김치', calories: 50, carbs: 10, protein: 1, fat: 0, image: 'images/food/배추김치.' },
+        { name: '깍두기', calories: 40, carbs: 8, protein: 1, fat: 0, image: 'images/food/깍두기.png' },
+        { name: '동치미', calories: 40, carbs: 8, protein: 1, fat: 0, image: 'images/food/동치미.png' }
     ],
     '후식': [
         { name: '식혜', calories: 80, carbs: 20, protein: 0, fat: 0, image: 'images/food/식혜.png' },
