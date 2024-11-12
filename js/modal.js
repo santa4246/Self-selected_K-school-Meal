@@ -5,22 +5,34 @@ function modalAction(category) {
 
   document.getElementById('add-btn').removeEventListener('click', add_btn_listener);
   document.getElementById('cancel-btn').removeEventListener('click', cancle_btn_listener);
-  overlay.removeEventListener('click', overlay_click_listener);
+  // overlay.removeEventListener('click', overlay_click_listener);
 
   document.querySelectorAll('.open-modal-btn').forEach(button => {
     button.addEventListener('click', (event) => {
       selectedButtonId = event.target.getAttribute('data-btn-id');
       modal.style.display = 'block';
-      overlay.style.display = 'block';
+      // overlay.style.display = 'block';
 
-      let selectedFoodName = document.getElementById('selectedFoodName');
+      let modalImage = document.getElementById('modalImage');
+      let modalFoodName = document.getElementById('modalFoodName');
+      let modalFoodKcal = document.getElementById('modalFoodKcal');
+
+      let selectedFoodDesc = document.getElementById('selectedFoodDesc');
       let selectedFoodCalories = document.getElementById('selectedFoodCalories');
       let selectedFoodCarbs = document.getElementById('selectedFoodCarbs');
       let selectedFoodProtein = document.getElementById('selectedFoodProtein');
       let selectedFoodFat = document.getElementById('selectedFoodFat');
       let foodInfo = JSON.parse(event.target.getAttribute('data-btn-food'));
-      
-      selectedFoodName.textContent = `음식 : ${foodInfo.name}`;
+
+      modalImage.style.backgroundImage = `url("${foodInfo.image}")`;
+      modalImage.style.backgroundSize = 'cover';
+      modalImage.style.width = '150px';
+      modalImage.style.height = '150px';
+
+      modalFoodName.textContent = `${foodInfo.name}`;
+      modalFoodEngName.textContent = `(영어영어)`;
+
+      selectedFoodDesc.textContent = `(설명글)`;
       selectedFoodCalories.textContent = `칼로리 : ${foodInfo.calories}`;
       selectedFoodCarbs.textContent = `탄수화물 : ${foodInfo.carbs}`;
       selectedFoodProtein.textContent = `단백질 : ${foodInfo.protein}`;
@@ -30,7 +42,7 @@ function modalAction(category) {
 
   document.getElementById('add-btn').addEventListener('click', add_btn_listener), { once: true };
   document.getElementById('cancel-btn').addEventListener('click', cancle_btn_listener), { once: true };
-  overlay.addEventListener('click', overlay_click_listener), { once: true };
+  // overlay.addEventListener('click', overlay_click_listener), { once: true };
 
   function add_btn_listener() {
     if (selectedButtonId) {

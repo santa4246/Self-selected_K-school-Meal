@@ -42,32 +42,24 @@
 <!-- 모달 -->
 <div class="modal-overlay"></div>
 <div class="modal">
-    <p>선택한 음식을 담으시겠습니까?</p>
-    <br>
-    <br>
-    <br>
-    <br>
-    <p>((음식 사진 넣어도 좋을 듯?))</p>
-    <br>
-    <br>
-    <br>
-    <br>
-    <ul>
-        <li>((필요한 정보 표기))</li>
-        <li id="selectedFoodName"></li>
-        <li id="selectedFoodCalories"></li>
-        <li id="selectedFoodCarbs"></li>
-        <li id="selectedFoodProtein"></li>
-        <li id="selectedFoodFat"></li>
-    </ul>
-    <br>
-    <br>
-    <p>~~~~</p>
-    <p>음식 설명</p>
-    <p>~~~~</p>
+    <button id="cancel-btn"></button>
+    <div class="modal_layout">
+        <p id="modalImage" class="modal_image"></p>
+        <p id="modalFoodName" class="modal_image"></p>
+        <p id="modalFoodEngName" class="modal_image"></p>
+    </div>
+    <div class="modal_layout text_align_left">
+        <ul>
+            <li id="selectedFoodDesc"></li>
+            <br>
+            <li id="selectedFoodCalories"></li>
+            <li id="selectedFoodCarbs"></li>
+            <li id="selectedFoodProtein"></li>
+            <li id="selectedFoodFat"></li>
+        </ul>
+    </div>
     <div class="modal-buttons">
         <button id="add-btn">담기</button>
-        <button id="cancel-btn">취소</button>
     </div>
 </div>
 

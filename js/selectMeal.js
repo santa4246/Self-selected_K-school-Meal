@@ -64,6 +64,7 @@ function showFoodOptions(category) {
         button.textContent = `${food.name}`;
         button.dataset.image = food.image; // 이미지 경로 추가
         button.style.backgroundImage = `url("${food.image}")`;
+        button.style.backgroundRepeat = `no-repeat`;
         button.className = 'open-modal-btn';
         button.dataset.btnId = buttonId++;
         button.dataset.btnCategory = category;
@@ -134,8 +135,8 @@ function addToTray(category, food) {
         case "후식":
             width = '100px';
             height = '100px';
-            coordinate_x = '100px';
-            coordinate_y = '100px';
+            coordinate_x = '530px';
+            coordinate_y = '160px';
             break;
         default:
             alert('다시 선택해주세요.');
