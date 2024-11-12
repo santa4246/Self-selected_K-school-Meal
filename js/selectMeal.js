@@ -206,3 +206,7 @@ document.getElementById('calculateCaloriesButton').addEventListener('click', () 
     ratioDisplay.textContent = `탄:단:지 비율 = ${carbRatio}% : ${proteinRatio}% : ${fatRatio}%`;
     caloriesDiv.appendChild(ratioDisplay);
 });
+
+document.getElementById('calculateCaloriesButton').addEventListener('click', () => {
+    window.location.href = 'result.html';
+});

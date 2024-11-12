@@ -1,0 +1,11 @@
+.header {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: #004AAD;
+}
+
+h1 {
+  font-size: 24px;
+  color: #fff;
+  font-weight: bold;
+}
