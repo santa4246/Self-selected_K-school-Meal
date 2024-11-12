@@ -68,6 +68,12 @@ function showFoodOptions(category) {
         button.dataset.btnId = buttonId++;
         button.dataset.btnCategory = category;
         button.dataset.btnFood = JSON.stringify(food);
+
+        // 옵션 버튼 클릭할 때마다 modalAction 호출
+        button.addEventListener('click', () => {
+            modalAction(category);
+        });
+
         foodOptionsDiv.appendChild(button);
 
         const p = document.createElement('p');
@@ -76,28 +82,79 @@ function showFoodOptions(category) {
     });
 
     foodSelectionDiv.style.display = 'block';
-
     modalAction(category);
 }
 
 // 음식 선택 시 식판 업데이트하여 하나의 음식만 추가되도록 구현
 function addToTray(category, food) {
-    // 동일 카테고리에서 선택된 음식이 있으면 대체
     food = JSON.parse(food);
-    trayItems[category] = food;
-    updateTray();
 
-    // 선택된 음식의 이미지를 식판에 추가
     const foodImagesContainer = document.getElementById('trayItems');
-    foodImagesContainer.innerHTML = ''; // 기존 이미지를 지우고 새로 추가
+
+    const existingImage = document.querySelector(`img[data-category="${category}"]`);
+    if (existingImage) {
+        existingImage.remove();
+    }
+    
+    trayItems[category] = food;
+
+    let width, height;
+    let coordinate_x, coordinate_y;
+    switch (category) {
+        case "밥":
+            width = '250px';
+            height = '250px';
+            coordinate_x = '40px';
+            coordinate_y = '200px';
+            break;
+        case "국":
+            width = '250px';
+            height = '250px';
+            coordinate_x = '330px';
+            coordinate_y = '200px';
+            break;
+        case "주찬":
+            width = '200px';
+            height = '200px';
+            coordinate_x = '210px';
+            coordinate_y = '35px';
+            break;
+        case "부찬":
+            width = '160px';
+            height = '160px';
+            coordinate_x = '45px';
+            coordinate_y = '30px';
+            break;
+        case "김치":
+            width = '160px';
+            height = '160px';
+            coordinate_x = '420px';
+            coordinate_y = '30px';
+            break;
+        case "후식":
+            width = '100px';
+            height = '100px';
+            coordinate_x = '100px';
+            coordinate_y = '100px';
+            break;
+        default:
+            alert('다시 선택해주세요.');
+    }
+    console.log(food)
 
     if (food.image) {
         const foodImage = document.createElement('img');
-        foodImage.src = food.image; // 선택된 음식의 이미지 경로 사용
-        foodImage.alt = '선택된 음식 이미지'; // 이미지 설명
-        foodImage.style.width = '100px'; // 원하는 크기로 조정
-        foodImage.style.height = '100px'; // 원하는 크기로 조정
-        foodImage.style.margin = '5px'; // 간격 조정
+        foodImage.src = food.image;
+        foodImage.id = food.name;
+        foodImage.alt = '선택된 음식 이미지';
+        foodImage.style.position = 'absolute';
+        foodImage.style.width = width;
+        foodImage.style.height = height;
+        foodImage.style.left = coordinate_x;
+        foodImage.style.top = coordinate_y;
+        foodImage.style.margin = '5px';
+
+        foodImage.dataset.category = category;
 
         foodImagesContainer.appendChild(foodImage); // 식판에 이미지 추가
     }
@@ -105,7 +162,6 @@ function addToTray(category, food) {
 
 // 식판 업데이트
 function updateTray() {
-    trayItemsUl.innerHTML = '';
     Object.values(trayItems).forEach(item => {
         const li = document.createElement('li');
         li.textContent = `${item.name}`;
