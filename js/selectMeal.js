@@ -12,36 +12,36 @@ const totalCaloriesP = document.getElementById('totalCalories');
 let trayItems = {}; // 각 카테고리에서 하나의 음식만 선택되도록 객체로 변경
 let foodData = {
     '밥': [
-        { name: '찹쌀밥', calories: 300, carbs: 68, protein: 5, fat: 1, image: 'images/food/찹쌀밥.png' },
-        { name: '흑미밥', calories: 250, carbs: 52, protein: 6, fat: 2, image: 'images/food/흑미밥.png' },
-        { name: '약콩밥', calories: 250, carbs: 52, protein: 6, fat: 2, image: 'images/food/약콩밥.png' }
+        { name: '찹쌀밥', calories: 347.1, carbs: 74.6, protein: 6.4, fat: 1, image: 'images/food/찹쌀밥.png' },
+        { name: '흑미밥', calories: 338.2, carbs: 72.8, protein: 6.3, fat: 1, image: 'images/food/흑미밥.png' },
+        { name: '약콩밥', calories: 340.5, carbs: 70.4, protein: 7.9, fat: 1.7, image: 'images/food/약콩밥.png' }
     ],
     '국': [
-        { name: '한우미역국', calories: 150, carbs: 3, protein: 10, fat: 8, image: 'images/food/한우미역국.png' },
-        { name: '닭미역국', calories: 180, carbs: 5, protein: 12, fat: 9, image: 'images/food/닭미역국.png' },
-        { name: '조갯살미역국', calories: 180, carbs: 5, protein: 12, fat: 9, image: 'images/food/조갯살미역국.png' },
-        { name: '들깨미역국', calories: 180, carbs: 5, protein: 12, fat: 9, image: 'images/food/들깨미역국.png' }
+        { name: '한우미역국', calories: 56.4, carbs: 2.5, protein: 4.4, fat: 3.6, image: 'images/food/한우미역국.png' },
+        { name: '닭미역국', calories: 39.9, carbs: 2.5, protein: 4.9, fat: 1.6, image: 'images/food/닭미역국.png' },
+        { name: '조갯살미역국', calories: 46.8, carbs: 2.7, protein: 5.6, fat: 1.8, image: 'images/food/조갯살미역국.png' },
+        { name: '들깨미역국', calories: 54.5, carbs: 4.3, protein: 3.5, fat: 3.3, image: 'images/food/들깨미역국.png' }
     ],
     '주찬': [
-        { name: '한우갈비찜', calories: 400, carbs: 10, protein: 25, fat: 30, image: 'images/food/한우갈비찜.png' },
-        { name: '매운돼지갈비찜', calories: 450, carbs: 15, protein: 35, fat: 20, image: 'images/food/매운돼지갈비찜.png' },
-        { name: '안동찜닭', calories: 180, carbs: 5, protein: 12, fat: 9, image: 'images/food/안동찜닭.png' },
-        { name: '고등어무조림', calories: 180, carbs: 5, protein: 12, fat: 9, image: 'images/food/고등어무조림.png' }
+        { name: '한우갈비찜', calories: 355.7, carbs: 20.8, protein: 21.5, fat: 20.1, image: 'images/food/한우갈비찜.png' },
+        { name: '매운돼지갈비찜', calories: 335.1, carbs: 21.4, protein: 20, fat: 18.1, image: 'images/food/매운돼지갈비찜.png' },
+        { name: '안동찜닭', calories: 262.1, carbs: 26.4, protein: 19, fat: 8, image: 'images/food/안동찜닭.png' },
+        { name: '고등어무조림', calories: 202.6, carbs: 17, protein: 14.1, fat: 8.1, image: 'images/food/고등어무조림.png' }
     ],
     '부찬': [
-        { name: '콩나물무침', calories: 200, carbs: 3, protein: 15, fat: 15, image: 'images/food/콩나물무침.png' },
-        { name: '고사리볶음', calories: 100, carbs: 5, protein: 2, fat: 8, image: 'images/food/고사리볶음.png' },
-        { name: '시금치고추장무침', calories: 100, carbs: 5, protein: 2, fat: 8, image: 'images/food/시금치고추장무침.png' },
-        { name: '애호박나물', calories: 100, carbs: 5, protein: 2, fat: 8, image: 'images/food/애호박나물.png' }
+        { name: '콩나물무침', calories: 30.8, carbs: 2.6, protein: 2.7, fat: 0.9, image: 'images/food/콩나물무침.png' },
+        { name: '고사리볶음', calories: 43.6, carbs: 3, protein: 1.9, fat: 3, image: 'images/food/고사리볶음.png' },
+        { name: '시금치고추장무침', calories: 46.8, carbs: 7.5, protein: 2.1, fat: 1.4, image: 'images/food/시금치고추장무침.png' },
+        { name: '애호박볶음', calories: 23, carbs: 3.4, protein: 0.8, fat: 0.9, image: 'images/food/애호박나물.png' }
     ],
     '김치': [
-        { name: '배추김치', calories: 50, carbs: 10, protein: 1, fat: 0, image: 'images/food/배추김치.png' },
-        { name: '깍두기', calories: 40, carbs: 8, protein: 1, fat: 0, image: 'images/food/깍두기.png' },
-        { name: '동치미', calories: 40, carbs: 8, protein: 1, fat: 0, image: 'images/food/동치미.png' }
+        { name: '배추김치', calories: 22.8, carbs: 3.7, protein: 1.2, fat: 0.3, image: 'images/food/배추김치.png' },
+        { name: '깍두기', calories: 22.8, carbs: 4.5, protein: 0.9, fat: 0.1, image: 'images/food/깍두기.png' },
+        { name: '동치미', calories: 5.2, carbs: 1.2, protein: 0.2, fat: 0, image: 'images/food/동치미.png' }
     ],
     '후식': [
-        { name: '식혜', calories: 80, carbs: 20, protein: 0, fat: 0, image: 'images/food/식혜.png' },
-        { name: '미숫가루', calories: 90, carbs: 22, protein: 1, fat: 0, image: 'images/food/미숫가루.png' }
+        { name: '식혜', calories: 40, carbs: 10, protein: 0, fat: 0, image: 'images/food/식혜.png' },
+        { name: '미숫가루', calories: 398, carbs: 76.2, protein: 14.5, fat: 5.5, image: 'images/food/미숫가루.png' }
     ]
 };
 
