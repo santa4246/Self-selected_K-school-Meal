@@ -262,3 +262,8 @@ categoryButtons.forEach(button => {
         button.classList.add('active');
     });
 });
+
+const homeButton = document.getElementById('home');
+homeButton.addEventListener('click', () => {
+    window.location.href = 'index.html';
+});
