@@ -235,19 +235,20 @@ document.getElementById('calculateCaloriesButton').addEventListener('click', () 
         totalFat += item.fat;
     });
 
-    // totalCaloriesP.textContent = `총 열량: ${totalCalories} Kcal`;
-
     // 비율 계산
     const totalNutrients = totalCarbs * 4 + totalProtein * 4 + totalFat * 9;
     const carbRatio = ((totalCarbs * 4) / totalNutrients * 100).toFixed(1);
     const proteinRatio = ((totalProtein * 4) / totalNutrients * 100).toFixed(1);
     const fatRatio = ((totalFat * 9) / totalNutrients * 100).toFixed(1);
 
-    // 비율 표시
-    const ratioDisplay = document.createElement('p');
-    ratioDisplay.id = 'ratioDisplay';  // 새로운 비율 표시 ID 설정
-    ratioDisplay.textContent = `탄:단:지 비율 = ${carbRatio}% : ${proteinRatio}% : ${fatRatio}%`;
-    caloriesDiv.appendChild(ratioDisplay);
+    let result = {
+        'totalCalories': totalCalories,
+        'carbRatio': carbRatio,
+        'proteinRatio': proteinRatio,
+        'fatRatio': fatRatio
+    }
+
+    localStorage.setItem("result", JSON.stringify(result));
 });
 
 document.getElementById('calculateCaloriesButton').addEventListener('click', () => {
