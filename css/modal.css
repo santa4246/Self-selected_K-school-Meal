@@ -18,11 +18,21 @@
 }
 
 .modal_layout {
+    width: 250px;
     float: left;
+    margin-right: 10px;
 }
 
-.modal_image {
-    margin-right: 100px;
+.modal_layout p {
+    width: 250px;
+}
+
+#modalImage {
+    margin: 10px 0px 10px 50px;
+}
+
+#modalFoodEngName {
+    font-size: 14px;
 }
 
 .text_align_left {

@@ -30,7 +30,7 @@ function modalAction(category) {
       modalImage.style.height = '150px';
 
       modalFoodName.textContent = `${foodInfo.name}`;
-      modalFoodEngName.textContent = `(영어영어)`;
+      modalFoodEngName.textContent = `${foodInfo.engName}`;
 
       selectedFoodDesc.textContent = `(설명글)`;
       selectedFoodCalories.textContent = `칼로리 : ${foodInfo.calories}`;
