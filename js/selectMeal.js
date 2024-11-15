@@ -7,7 +7,6 @@ const foodOptionsDescDiv = document.getElementById('foodOptionsDesc');
 const tray = document.getElementById('tray');
 const trayItemsUl = document.getElementById('trayItems');
 const caloriesDiv = document.getElementById('calories');
-const totalCaloriesP = document.getElementById('totalCalories');
 
 let trayItems = {}; // 각 카테고리에서 하나의 음식만 선택되도록 객체로 변경
 let foodData = {
@@ -101,47 +100,91 @@ function addToTray(category, food) {
 
     let width, height;
     let coordinate_x, coordinate_y;
-    switch (category) {
-        case "밥":
-            width = '250px';
-            height = '250px';
-            coordinate_x = '40px';
-            coordinate_y = '200px';
-            break;
-        case "국":
-            width = '250px';
-            height = '250px';
-            coordinate_x = '330px';
-            coordinate_y = '200px';
-            break;
-        case "주찬":
-            width = '200px';
-            height = '200px';
-            coordinate_x = '210px';
-            coordinate_y = '35px';
-            break;
-        case "부찬":
-            width = '160px';
-            height = '160px';
-            coordinate_x = '45px';
-            coordinate_y = '30px';
-            break;
-        case "김치":
-            width = '160px';
-            height = '160px';
-            coordinate_x = '420px';
-            coordinate_y = '30px';
-            break;
-        case "후식":
-            width = '100px';
-            height = '100px';
-            coordinate_x = '530px';
-            coordinate_y = '160px';
-            break;
-        default:
-            alert('다시 선택해주세요.');
+    let screenWidth = window.innerWidth;
+    console.log(screenWidth)
+    if (screenWidth < 479) { // 모바일
+        switch (category) {
+            case "밥":
+                width = '150px';
+                height = '150px';
+                coordinate_x = '10px';
+                coordinate_y = '120px';
+                break;
+            case "국":
+                width = '150px';
+                height = '150px';
+                coordinate_x = '165px';
+                coordinate_y = '120px';
+                break;
+            case "주찬":
+                width = '117px';
+                height = '117px';
+                coordinate_x = '105px';
+                coordinate_y = '35px';
+                break;
+            case "부찬":
+                width = '95px';
+                height = '95px';
+                coordinate_x = '16px';
+                coordinate_y = '34px';
+                break;
+            case "김치":
+                width = '95px';
+                height = '95px';
+                coordinate_x = '215px';
+                coordinate_y = '34px';
+                break;
+            case "후식":
+                width = '80px';
+                height = '80px';
+                coordinate_x = '254px';
+                coordinate_y = '250px';
+                break;
+            default:
+                alert('다시 선택해주세요.');
+        }
+    } else { // PC
+        switch (category) {
+            case "밥":
+                width = '250px';
+                height = '250px';
+                coordinate_x = '40px';
+                coordinate_y = '200px';
+                break;
+            case "국":
+                width = '250px';
+                height = '250px';
+                coordinate_x = '330px';
+                coordinate_y = '200px';
+                break;
+            case "주찬":
+                width = '200px';
+                height = '200px';
+                coordinate_x = '210px';
+                coordinate_y = '35px';
+                break;
+            case "부찬":
+                width = '160px';
+                height = '160px';
+                coordinate_x = '45px';
+                coordinate_y = '30px';
+                break;
+            case "김치":
+                width = '160px';
+                height = '160px';
+                coordinate_x = '420px';
+                coordinate_y = '30px';
+                break;
+            case "후식":
+                width = '100px';
+                height = '100px';
+                coordinate_x = '530px';
+                coordinate_y = '160px';
+                break;
+            default:
+                alert('다시 선택해주세요.');
+        }
     }
-    console.log(food)
 
     if (food.image) {
         const foodImage = document.createElement('img');
@@ -192,7 +235,7 @@ document.getElementById('calculateCaloriesButton').addEventListener('click', () 
         totalFat += item.fat;
     });
 
-    totalCaloriesP.textContent = `총 열량: ${totalCalories} Kcal`;
+    // totalCaloriesP.textContent = `총 열량: ${totalCalories} Kcal`;
 
     // 비율 계산
     const totalNutrients = totalCarbs * 4 + totalProtein * 4 + totalFat * 9;
@@ -209,4 +252,13 @@ document.getElementById('calculateCaloriesButton').addEventListener('click', () 
 
 document.getElementById('calculateCaloriesButton').addEventListener('click', () => {
     window.location.href = 'result.html';
+});
+
+const categoryButtons = document.querySelectorAll('.category .food');
+
+categoryButtons.forEach(button => {
+    button.addEventListener('click', () => {
+        categoryButtons.forEach(btn => btn.classList.remove('active'));
+        button.classList.add('active');
+    });
 });

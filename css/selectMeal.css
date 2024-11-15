@@ -33,7 +33,8 @@ h1 {
 .category button, .food-selection button, #calories button {
     padding: 12px 24px;
     font-size: 18px;
-    border-radius: 8px;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
     border: none;
     transition: transform 0.3s, background-color 0.3s; /* 전환 애니메이션 */
     cursor: pointer;
@@ -129,6 +130,12 @@ h1 {
     color: #333;
 }
 
+.food.active {
+    background-image: url('../images/background/background.png');
+    background-color: #fff;
+    color: black;
+}
+
 
 /* 노트북 & 태블릿 가로 (해상도 1024px ~ 1279px)*/ 
 @media all and (min-width:1024px) and (max-width:1279px) { 
@@ -144,6 +151,14 @@ h1 {
 
 /* 모바일 세로 (해상도 ~ 479px)*/ 
 @media all and (max-width:479px) {
+    .header {
+        padding-top: 20px;
+        box-sizing: border-box;
+    }
+
+    h1 {
+        font-size: 15px;
+    }
     #trayItems {
         width: 300px;
         height: 200px;
@@ -152,16 +167,25 @@ h1 {
     #tray {
         width: 300px;
         height: 300px;
+        top: 430px;
     }
 
     .category {
-        width: 100%;
+        width: 98%;
+        display: inline-flex;
         font-size: 10px !important;
     }
     
     .category button {
-        padding-left: 0;
-        padding-right: 0;
+        width: 14%;
+        padding: 5px 0;
+        border-radius: 0;
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+    }
+
+    .category button, .food-selection button, #calories button {
+        font-size: 12px;
     }
 
     #foodOptions button {
@@ -171,5 +195,13 @@ h1 {
 
     #foodOptionsDesc {
         font-size: 9px;
+    }
+
+    #foodOptionsDesc p {
+        width: 70px;
+    }
+
+    #calories {
+        top: 660px;
     }
 }
