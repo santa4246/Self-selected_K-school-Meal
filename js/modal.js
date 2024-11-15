@@ -5,13 +5,13 @@ function modalAction(category) {
 
   document.getElementById('add-btn').removeEventListener('click', add_btn_listener);
   document.getElementById('cancel-btn').removeEventListener('click', cancle_btn_listener);
-  // overlay.removeEventListener('click', overlay_click_listener);
+  overlay.removeEventListener('click', overlay_click_listener);
 
   document.querySelectorAll('.open-modal-btn').forEach(button => {
     button.addEventListener('click', (event) => {
       selectedButtonId = event.target.getAttribute('data-btn-id');
       modal.style.display = 'block';
-      // overlay.style.display = 'block';
+      overlay.style.display = 'block';
 
       let modalImage = document.getElementById('modalImage');
       let modalFoodName = document.getElementById('modalFoodName');
@@ -42,7 +42,7 @@ function modalAction(category) {
 
   document.getElementById('add-btn').addEventListener('click', add_btn_listener), { once: true };
   document.getElementById('cancel-btn').addEventListener('click', cancle_btn_listener), { once: true };
-  // overlay.addEventListener('click', overlay_click_listener), { once: true };
+  overlay.addEventListener('click', overlay_click_listener), { once: true };
 
   function add_btn_listener() {
     if (selectedButtonId) {
