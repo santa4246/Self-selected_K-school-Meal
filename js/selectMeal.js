@@ -251,10 +251,6 @@ document.getElementById('calculateCaloriesButton').addEventListener('click', () 
     localStorage.setItem("result", JSON.stringify(result));
 });
 
-document.getElementById('calculateCaloriesButton').addEventListener('click', () => {
-    window.location.href = 'result.html';
-});
-
 const categoryButtons = document.querySelectorAll('.category .food');
 
 categoryButtons.forEach(button => {
@@ -267,4 +263,37 @@ categoryButtons.forEach(button => {
 const homeButton = document.getElementById('home');
 homeButton.addEventListener('click', () => {
     window.location.href = 'index.html';
+});
+
+let selected = {
+    밥: false,
+    국: false,
+    주찬: false,
+    부찬: false,
+    김치: false,
+    후식: false
+}
+
+document.getElementById('calculateCaloriesButton').addEventListener('click', () => {
+    Object.keys(selected).forEach(key => {
+        selected[key] = false;
+    });
+
+    const trayItems = document.querySelectorAll("#trayItems img");
+    trayItems.forEach(img => {
+        const category = img.dataset.category;
+        if (selected.hasOwnProperty(category)) {
+            selected[category] = true;
+        }
+    });
+
+    const unselectedCategories = Object.keys(selected).filter(
+        key => !selected[key]
+    );
+
+    if (unselectedCategories.length === 0) {
+        window.location.href = 'result.html';
+    } else {
+        alert(`모든 음식을 선택해주세요. \n선택되지 않은 항목 : ${unselectedCategories.join(", ")}`);
+    }
 });
