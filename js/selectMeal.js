@@ -298,11 +298,21 @@ document.getElementById('calculateCaloriesButton').addEventListener('click', asy
 
     if (unselectedCategories.length === 0) {
         const tray = document.getElementById("tray");
-        const canvas = await html2canvas(tray);
-        const imageData = canvas.toDataURL("image/png");
+        tray.querySelectorAll("img").forEach((img) => {
+            if (!img.crossOrigin) {
+                img.crossOrigin = "anonymous";
+            }
+        });
+        try {
+            const canvas = await html2canvas(tray);
+            const imageData = canvas.toDataURL("image/png");
 
-        localStorage.setItem("trayImage", imageData);
-        window.location.href = 'result.html';
+            localStorage.setItem("trayImage", imageData);
+            window.location.href = 'result.html';
+            
+        } catch (error) {
+            console.error(error)
+        }
     } else {
         alert(`모든 음식을 선택해주세요. \n선택되지 않은 항목 : ${unselectedCategories.join(", ")}`);
     }
