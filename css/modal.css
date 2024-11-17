@@ -54,13 +54,12 @@
 }
 
 .modal #add-btn {
-    background-image: url('../images/startbutton.png');
-    background-color: #fff;
+    background-color: #004AAD;
     background-size: contain;
     width: 130px;
     height: 44px;
     color: white;
-    text-indent: -99999px;
+    text-indent: 0px;
 }
 
 .modal #cancel-btn {
