@@ -221,6 +221,7 @@ document.getElementById('calculateCaloriesButton').addEventListener('click', () 
     let totalCarbs = 0;
     let totalProtein = 0;
     let totalFat = 0;
+    let food_ = '';
 
     // 기존 비율 정보 제거
     const existingRatioDisplay = document.getElementById('ratioDisplay');
@@ -229,8 +230,7 @@ document.getElementById('calculateCaloriesButton').addEventListener('click', () 
     }
 
     Object.values(trayItems).forEach(item => {
-        console.log(item);
-        console.log(item.calories);
+        food_ += item.name + ', '
         totalCalories += item.calories;
         totalCarbs += item.carbs;
         totalProtein += item.protein;
@@ -246,6 +246,7 @@ document.getElementById('calculateCaloriesButton').addEventListener('click', () 
     const fatRatio = ((totalFat * 9) / totalNutrients * 100).toFixed(1);
 
     let result = {
+        'food': food_,
         'totalCalories': totalCalories.toFixed(1),
         'carbRatio': carbRatio,
         'proteinRatio': proteinRatio,

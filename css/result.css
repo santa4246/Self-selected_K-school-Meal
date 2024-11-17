@@ -33,8 +33,14 @@ canvas {
   color: #333;
 }
 
+.asset-layout {
+  height: 400px;
+  margin-bottom: 50px;
+}
+
 .asset-container {
   width: 50%;
+  height: 400px;
   float: left;
 }
 

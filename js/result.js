@@ -37,7 +37,15 @@ if (result !== null) {
     }
   });
   const centerText = document.getElementById('chartCenterText');
-  centerText.innerText = `${totalCalories} kcal`;
+  centerText.innerText = `${totalCalories} Kcal`;
+
+  const selectedTrayInfo = document.getElementById('selectedTrayInfo');
+  const selectedTrayKcal = document.getElementById('selectedTrayKcal');
+  const selectedTrayRatio = document.getElementById('selectedTrayRatio');
+
+  selectedTrayInfo.textContent = `${(result.food).slice(0, -2)}를 선택하였습니다.`
+  selectedTrayKcal.textContent = `해당 식단의 칼로리는 ${totalCalories} Kcal`
+  selectedTrayRatio.textContent = `탄수화물:단백질:지방의 비율은 ${carbRatio}%:${proteinRatio}%:${fatRatio}% 입니다.`
 }
 
 const homeButton = document.getElementById('home');

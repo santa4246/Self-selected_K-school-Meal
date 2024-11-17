@@ -16,12 +16,27 @@
 
   <div class="selected-tray-container">
     <p class="selected-tray">내가 선택한 식단</p>
-    <div class="asset-container" id="imageContainer"></div>
-    <div class="chart-container asset-container">
-      <canvas id="nutritionChart"></canvas>
-      <div class="chart-center-text" id="chartCenterText"></div>
+    <div class="asset-layout">
+      <div class="asset-container" id="imageContainer"></div>
+      <div class="chart-container asset-container">
+        <canvas id="nutritionChart"></canvas>
+        <div class="chart-center-text" id="chartCenterText"></div>
+      </div>
     </div>
-    <p id="selectedTrayDesc" class="selected-tray-desc"></p>
+    <p id="selectedTrayInfo" class="selected-tray-info"></p>
+    <br>
+    <p id="selectedTrayKcal" class="selected-tray-kcal"></p>
+    <p id="selectedTrayRatio" class="selected-tray-ratio"></p>
+    <br>
+    <br>
+    <p>
+      학교급식의 영양관리기준은 학교급식 기본 방향에 따라,
+(1) 에너지는 학교급식의 영양관리기준 에너지의 ±10%로 하되, 탄수화물: 단백질: 지방의 에너지 비율이 각각 55~70%: 7~20%: 15~30%가 되도록 구성하고 있습니다.
+(2) 단백질은 학교급식 영양관리기준의 단백질량 이상으로 공급하되, 총공급 에너지 중 단백질 에너지가 차지하는 비율이 20%를 넘지 않도록 구성하고 있습니다.
+(3) 그 외에도 비타민, 무기질 등 다양한 미량 영양소 섭취를 고려하여 식단을 구성하고 있습니다.
+
+이렇게 한국의 학교급식은 학교급식법에 따라 학생의 발육과 건강에 필요한 영양을 충족하고 올바른 식생활습관 형성에 도움을 줄 수 있도록 다양한 식품으로 구성하고 있습니다. 
+    </p>
   </div>
 
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
