@@ -1,9 +1,9 @@
 const translations = {
 	en: {
-		index_title: "AA"
-		, index_title_desc: "AAAA"
-		, index_content_desc: "AAAAAAAAAAAA"
-		, index_produce: "AAAAAAAAAAAAAAAAAAAAAAAA"
+		index_title: "ABC School Meal Experience Program"
+		, index_title_desc: "The educational school meal policy where students, as the main participants in school meals, autonomously choose nutritious, balanced, and healthy foods"
+		, index_content_desc: "A school meal policy aims to expand students' autonomy and choice by offering a variety of meal options that meet individual nutritional needs, allowing them to independently practice healthy eating habits. This represents the direction of future school meal programs, fostering the development of sustainable, community-based dietary management competencies beyond personal meal management skills."
+		, index_produce: "Created by Nutrition Teachers Seo Ah-ram, Cho Hyo-hyun, and Cha Seul-gi / Development Advisory: Kang Min-hyeok"
 	},
 	ko: {
 		index_title: "자율 선택 급식 체험"
