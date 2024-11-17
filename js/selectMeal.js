@@ -304,12 +304,12 @@ document.getElementById('calculateCaloriesButton').addEventListener('click', asy
             }
         });
         try {
-            const canvas = await html2canvas(tray);
+            const canvas = await html2canvas(tray, {useCORS: true});
             const imageData = canvas.toDataURL("image/png");
 
             localStorage.setItem("trayImage", imageData);
             window.location.href = 'result.html';
-            
+
         } catch (error) {
             console.error(error)
         }
