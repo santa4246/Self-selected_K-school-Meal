@@ -36,7 +36,6 @@ if (result !== null) {
       cutout: '70%',
     }
   });
-  
   const centerText = document.getElementById('chartCenterText');
   centerText.innerText = `${totalCalories} kcal`;
 }
@@ -45,4 +44,18 @@ const homeButton = document.getElementById('home');
 homeButton.addEventListener('click', () => {
     window.location.href = 'index.html';
     localStorage.clear();
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+  const imageData = localStorage.getItem("trayImage");
+  if (imageData) {
+    const imgElement = document.createElement("img");
+    imgElement.src = imageData;
+    imgElement.style.width = "100%";
+    imgElement.style.height = "auto";
+
+    document.getElementById("imageContainer").appendChild(imgElement);
+  } else {
+    console.error("Tray image data not found!");
+  }
 });

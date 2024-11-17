@@ -14,9 +14,14 @@
     <h1 data-i18n="">자율 선택 급식 체험</h1>
   </div>
 
-  <div class="chart-container">
-    <canvas id="nutritionChart"></canvas>
-    <div class="chart-center-text" id="chartCenterText"></div>
+  <div class="selected-tray-container">
+    <p class="selected-tray">내가 선택한 식단</p>
+    <div class="asset-container" id="imageContainer"></div>
+    <div class="chart-container asset-container">
+      <canvas id="nutritionChart"></canvas>
+      <div class="chart-center-text" id="chartCenterText"></div>
+    </div>
+    <p id="selectedTrayDesc" class="selected-tray-desc"></p>
   </div>
 
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>

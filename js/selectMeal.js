@@ -229,11 +229,15 @@ document.getElementById('calculateCaloriesButton').addEventListener('click', () 
     }
 
     Object.values(trayItems).forEach(item => {
+        console.log(item);
+        console.log(item.calories);
         totalCalories += item.calories;
         totalCarbs += item.carbs;
         totalProtein += item.protein;
         totalFat += item.fat;
     });
+
+
 
     // 비율 계산
     const totalNutrients = totalCarbs * 4 + totalProtein * 4 + totalFat * 9;
@@ -242,7 +246,7 @@ document.getElementById('calculateCaloriesButton').addEventListener('click', () 
     const fatRatio = ((totalFat * 9) / totalNutrients * 100).toFixed(1);
 
     let result = {
-        'totalCalories': totalCalories,
+        'totalCalories': totalCalories.toFixed(1),
         'carbRatio': carbRatio,
         'proteinRatio': proteinRatio,
         'fatRatio': fatRatio
@@ -274,7 +278,7 @@ let selected = {
     후식: false
 }
 
-document.getElementById('calculateCaloriesButton').addEventListener('click', () => {
+document.getElementById('calculateCaloriesButton').addEventListener('click', async () => {
     Object.keys(selected).forEach(key => {
         selected[key] = false;
     });
@@ -292,6 +296,11 @@ document.getElementById('calculateCaloriesButton').addEventListener('click', () 
     );
 
     if (unselectedCategories.length === 0) {
+        const tray = document.getElementById("tray");
+        const canvas = await html2canvas(tray);
+        const imageData = canvas.toDataURL("image/png");
+
+        localStorage.setItem("trayImage", imageData);
         window.location.href = 'result.html';
     } else {
         alert(`모든 음식을 선택해주세요. \n선택되지 않은 항목 : ${unselectedCategories.join(", ")}`);

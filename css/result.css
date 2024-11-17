@@ -11,7 +11,6 @@ h1 {
 }
 
 canvas {
-  margin: 20px auto;
   display: block;
   max-width: 400px;
   width: 100%;
@@ -32,4 +31,31 @@ canvas {
   font-size: 1.5rem;
   font-weight: bold;
   color: #333;
+}
+
+.asset-container {
+  width: 50%;
+  float: left;
+}
+
+#imageContainer {
+  margin-right: 40px;
+}
+
+.selected-tray-container {
+  background-color: #fff;
+  width: 1000px;
+  height: 1000px;
+  margin: 50px auto 0;
+  padding: 30px;
+  box-sizing: border-box;
+}
+
+.selected-tray {
+  background-image: url('../images/selected_diet.png');
+  background-size: cover;
+  width: 235px;
+  height: 55px;
+  text-indent: -99999px;
+  margin: 0 auto 50px;
 }
