@@ -11,7 +11,7 @@ const caloriesDiv = document.getElementById('calories');
 let trayItems = {}; // 각 카테고리에서 하나의 음식만 선택되도록 객체로 변경
 let foodData = {
     '밥': [
-        { name: '찹쌀밥', desc: '찹쌀로 지은 밥으로 쫀득쫀득한 식감이 특징입니다.', engDesc: 'Rice cooked with glutinous rice, known for its chewy texture.', engName: 'Glutinous Short Grain Rice', calories: 347.1, carbs: 74.6, protein: 6.4, fat: 1, image: 'images/food/찹쌀밥.png' },
+        { name: '찹쌀밥', desc: '찹쌀로 지은 밥으로<br>쫀득쫀득한 식감이 특징입니다.', engDesc: 'Rice cooked with glutinous rice, known for its chewy texture.', engName: 'Glutinous Short Grain Rice', calories: 347.1, carbs: 74.6, protein: 6.4, fat: 1, image: 'images/food/찹쌀밥.png' },
         { name: '흑미밥', desc: '흑미를 섞어 지은 밥으로 고소하고 씹는 맛이 더해집니다.', engDesc: 'Rice mixed with black rice, adding a savory flavor and a chewy bite.', engName: 'Black Rice', calories: 338.2, carbs: 72.8, protein: 6.3, fat: 1, image: 'images/food/흑미밥.png' },
         { name: '약콩밥', desc: '약콩을 넣어 만든 밥으로 단백질이 풍부합니다.', engDesc: 'Rice made with green flesh black bean, rich in protein.', engName: 'Green Flesh Black bean Rice', calories: 340.5, carbs: 70.4, protein: 7.9, fat: 1.7, image: 'images/food/약콩밥.png' }
     ],

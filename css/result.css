@@ -1,7 +1,17 @@
 .header {
   padding-top: 10px;
-  padding-bottom: 10px;
   background-color: #5f93bf;
+}
+
+.header-title{
+    display: inline-block;
+    margin-top: 15px;
+    margin-left: 10px;
+}
+
+.home-container {
+    display: inline-block;
+    margin: auto;
 }
 
 h1 {

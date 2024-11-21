@@ -32,7 +32,11 @@ function modalAction(category) {
       modalFoodName.textContent = `${foodInfo.name}`;
       modalFoodEngName.textContent = `${foodInfo.engName}`;
 
-      selectedFoodDesc.textContent = `${foodInfo.desc}`;
+      if (localStorage.getItem("language") == "ko") {
+        selectedFoodDesc.innerHTML = `${foodInfo.desc}`;
+      } else {
+        selectedFoodDesc.innerHTML = `${foodInfo.engDesc}`;
+      }
       selectedFoodCalories.textContent = `열량(Kcal) : ${foodInfo.calories}`;
       selectedFoodCarbs.textContent = `탄수화물(g) : ${foodInfo.carbs}`;
       selectedFoodProtein.textContent = `단백질(g) : ${foodInfo.protein}`;

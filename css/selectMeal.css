@@ -30,6 +30,10 @@ h1 {
     margin: 20px auto;
 }
 
+#selectedFoodDesc {
+    text-align: center;
+}
+
 .food-selection {
     margin-bottom: 400px;
 }
