@@ -6,11 +6,22 @@ body {
 
 .header {
     padding-top: 10px;
-    background-color: #004AAD;
+    background-color: #5f93bf;
+}
+
+.header-title{
+    display: inline-block;
+    margin-top: 15px;
+    margin-left: 10px;
+}
+
+.home-container {
+    display: inline-block;
+    margin: auto;
 }
 
 h1 {
-    font-size: 24px;
+    font-size: 39px;
     color: #fff;
     font-weight: bold;
 }
@@ -51,21 +62,18 @@ h1 {
 
 #tray {
     position: absolute;
-    top: 700px;
+    top: 610px;
     left: 50%;
     transform: translate(-50%, -50%);
     background-image: url('../images/tray-background.png');
     background-size: cover;
     background-position: center;
     padding: 20px;
-    border-radius: 15px;
     width: 600px;
     height: 500px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    border: 2px solid #ddd;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* 그림자 효과 */
 }
 
 #trayItems {
@@ -81,7 +89,7 @@ h1 {
 
 #calories {
     position: absolute;
-    top: 1050px;
+    top: 850px;
     left: 50%;
     transform: translate(-50%, -50%);
 }
@@ -102,7 +110,7 @@ h1 {
 }
 
 #foodOptions button {
-    background-color: #fff;
+    background-color: transparent;
     background-size: contain;
     text-indent: -99999px;
     width: 150px;

@@ -11,36 +11,36 @@ const caloriesDiv = document.getElementById('calories');
 let trayItems = {}; // 각 카테고리에서 하나의 음식만 선택되도록 객체로 변경
 let foodData = {
     '밥': [
-        { name: '찹쌀밥', engName: 'Glutinous Short Grain Rice', calories: 347.1, carbs: 74.6, protein: 6.4, fat: 1, image: 'images/food/찹쌀밥.png' },
-        { name: '흑미밥', engName: 'Black Rice', calories: 338.2, carbs: 72.8, protein: 6.3, fat: 1, image: 'images/food/흑미밥.png' },
-        { name: '약콩밥', engName: 'Green Flesh Black bean Rice', calories: 340.5, carbs: 70.4, protein: 7.9, fat: 1.7, image: 'images/food/약콩밥.png' }
+        { name: '찹쌀밥', desc: '찹쌀로 지은 밥으로 쫀득쫀득한 식감이 특징입니다.', engDesc: 'Rice cooked with glutinous rice, known for its chewy texture.', engName: 'Glutinous Short Grain Rice', calories: 347.1, carbs: 74.6, protein: 6.4, fat: 1, image: 'images/food/찹쌀밥.png' },
+        { name: '흑미밥', desc: '흑미를 섞어 지은 밥으로 고소하고 씹는 맛이 더해집니다.', engDesc: 'Rice mixed with black rice, adding a savory flavor and a chewy bite.', engName: 'Black Rice', calories: 338.2, carbs: 72.8, protein: 6.3, fat: 1, image: 'images/food/흑미밥.png' },
+        { name: '약콩밥', desc: '약콩을 넣어 만든 밥으로 단백질이 풍부합니다.', engDesc: 'Rice made with green flesh black bean, rich in protein.', engName: 'Green Flesh Black bean Rice', calories: 340.5, carbs: 70.4, protein: 7.9, fat: 1.7, image: 'images/food/약콩밥.png' }
     ],
     '국': [
-        { name: '한우미역국', engName: 'Beef and Seaweed Soup', calories: 56.4, carbs: 2.5, protein: 4.4, fat: 3.6, image: 'images/food/한우미역국.png' },
-        { name: '닭미역국', engName: 'Chicken and Seaweed Soup', calories: 39.9, carbs: 2.5, protein: 4.9, fat: 1.6, image: 'images/food/닭미역국.png' },
-        { name: '조갯살미역국', engName: 'Clam and Seaweed Soup', calories: 46.8, carbs: 2.7, protein: 5.6, fat: 1.8, image: 'images/food/조갯살미역국.png' },
-        { name: '들깨미역국', engName: 'Perilla Seed Seaweed Soup', calories: 54.5, carbs: 4.3, protein: 3.5, fat: 3.3, image: 'images/food/들깨미역국.png' }
+        { name: '한우미역국', desc: '한우로 깊은 맛을 낸 미역국입니다.', engDesc: 'Seaweed soup made with Korean beef for a deep, rich flavor.', engName: 'Beef and Seaweed Soup', calories: 56.4, carbs: 2.5, protein: 4.4, fat: 3.6, image: 'images/food/한우미역국.png' },
+        { name: '닭미역국', desc: '닭고기로 담백한 맛을 낸 미역국입니다.', engDesc: 'Seaweed soup cooked with chicken for a light and mild taste.', engName: 'Chicken and Seaweed Soup', calories: 39.9, carbs: 2.5, protein: 4.9, fat: 1.6, image: 'images/food/닭미역국.png' },
+        { name: '조갯살미역국', desc: '조갯살로 시원한 맛을 낸 미역국입니다.', engDesc: 'Seaweed soup prepared with clam meat for a refreshing flavor.', engName: 'Clam and Seaweed Soup', calories: 46.8, carbs: 2.7, protein: 5.6, fat: 1.8, image: 'images/food/조갯살미역국.png' },
+        { name: '들깨미역국', desc: '들깨로 고소한 맛을 낸 미역국입니다.', engDesc: 'Seaweed soup flavored with perilla seeds for a nutty taste.', engName: 'Perilla Seed Seaweed Soup', calories: 54.5, carbs: 4.3, protein: 3.5, fat: 3.3, image: 'images/food/들깨미역국.png' }
     ],
     '주찬': [
-        { name: '한우갈비찜', engName: 'Braised Beef Short Ribs', calories: 355.7, carbs: 20.8, protein: 21.5, fat: 20.1, image: 'images/food/한우갈비찜.png' },
-        { name: '매운돼지갈비찜', engName: 'Spicy Braised Pork Short Ribs', calories: 335.1, carbs: 21.4, protein: 20, fat: 18.1, image: 'images/food/매운돼지갈비찜.png' },
-        { name: '찜닭', engName: 'Braised Chicken', calories: 262.1, carbs: 26.4, protein: 19, fat: 8, image: 'images/food/안동찜닭.png' },
-        { name: '고등어무조림', engName: 'Braised Mackerel with Radish', calories: 202.6, carbs: 17, protein: 14.1, fat: 8.1, image: 'images/food/고등어무조림.png' }
+        { name: '한우갈비찜', desc: '한우 갈비로 만든 부드럽고 달콤한 찜요리입니다.', engDesc: 'A tender and sweet steamed dish made with Korean beef ribs.', engName: 'Braised Beef Short Ribs', calories: 355.7, carbs: 20.8, protein: 21.5, fat: 20.1, image: 'images/food/한우갈비찜.png' },
+        { name: '매운돼지갈비찜', desc: '돼지갈비에 매콤한 양념을 더한 찜요리입니다.', engDesc: 'A steamed dish of pork ribs seasoned with a spicy sauce.', engName: 'Spicy Braised Pork Short Ribs', calories: 335.1, carbs: 21.4, protein: 20, fat: 18.1, image: 'images/food/매운돼지갈비찜.png' },
+        { name: '찜닭', desc: '닭고기와 채소를 간장 양념으로 졸인 찜요리입니다.', engDesc: 'A dish of chicken and vegetables simmered in soy sauce.', engName: 'Braised Chicken', calories: 262.1, carbs: 26.4, protein: 19, fat: 8, image: 'images/food/안동찜닭.png' },
+        { name: '고등어무조림', desc: '고등어와 무를 양념에 졸인 감칠맛 나는 요리입니다.', engDesc: 'A savory dish of mackerel and radish braised in a flavorful sauce.', engName: 'Braised Mackerel with Radish', calories: 202.6, carbs: 17, protein: 14.1, fat: 8.1, image: 'images/food/고등어무조림.png' }
     ],
     '부찬': [
-        { name: '콩나물무침', engName: 'Bean Sprout Salad', calories: 30.8, carbs: 2.6, protein: 2.7, fat: 0.9, image: 'images/food/콩나물무침.png' },
-        { name: '고사리볶음', engName: 'Bracken Salad', calories: 43.6, carbs: 3, protein: 1.9, fat: 3, image: 'images/food/고사리볶음.png' },
-        { name: '시금치고추장무침', engName: 'Spinach Red Chilli Paste Salad', calories: 46.8, carbs: 7.5, protein: 2.1, fat: 1.4, image: 'images/food/시금치고추장무침.png' },
-        { name: '애호박볶음', engName: 'Stir-fried Zucchini', calories: 23, carbs: 3.4, protein: 0.8, fat: 0.9, image: 'images/food/애호박나물.png' }
+        { name: '콩나물무침', desc: '콩나물을 간단히 무친 아삭한 반찬입니다.', engDesc: 'A simple, crunchy side dish of seasoned bean sprouts.', engName: 'Bean Sprout Salad', calories: 30.8, carbs: 2.6, protein: 2.7, fat: 0.9, image: 'images/food/콩나물무침.png' },
+        { name: '고사리볶음', desc: '고사리를 부드럽게 볶은 담백한 반찬입니다.', engDesc: 'A light side dish of tender stir-fried bracken.', engName: 'Bracken Salad', calories: 43.6, carbs: 3, protein: 1.9, fat: 3, image: 'images/food/고사리볶음.png' },
+        { name: '시금치고추장무침', desc: '시금치를 고추장으로 무친 매콤한 반찬입니다.', engDesc: 'A spicy side dish of spinach mixed with red pepper paste.', engName: 'Spinach Red Chilli Paste Salad', calories: 46.8, carbs: 7.5, protein: 2.1, fat: 1.4, image: 'images/food/시금치고추장무침.png' },
+        { name: '애호박볶음', desc: '애호박을 부드럽게 볶은 반찬입니다.', engDesc: 'A side dish made by gently stir-frying zucchini.', engName: 'Stir-fried Zucchini', calories: 23, carbs: 3.4, protein: 0.8, fat: 0.9, image: 'images/food/애호박나물.png' }
     ],
     '김치': [
-        { name: '배추김치', engName: 'Kimchi (Baechukimchi)', calories: 22.8, carbs: 3.7, protein: 1.2, fat: 0.3, image: 'images/food/배추김치.png' },
-        { name: '깍두기', engName: 'Diced Radish Kimchi', calories: 22.8, carbs: 4.5, protein: 0.9, fat: 0.1, image: 'images/food/깍두기.png' },
-        { name: '동치미', engName: 'Radish Water Kimchi', calories: 5.2, carbs: 1.2, protein: 0.2, fat: 0, image: 'images/food/동치미.png' }
+        { name: '배추김치', desc: '배추로 담근 매콤하고 알싸한 김치입니다.', engDesc: 'A spicy and tangy kimchi made with chinese cabbage.', engName: 'Kimchi (Baechukimchi)', calories: 22.8, carbs: 3.7, protein: 1.2, fat: 0.3, image: 'images/food/배추김치.png' },
+        { name: '깍두기', desc: '무로 만든 아삭하고 매콤한 김치입니다.', engDesc: 'A crunchy and spicy kimchi made with cubed radish.', engName: 'Diced Radish Kimchi', calories: 22.8, carbs: 4.5, protein: 0.9, fat: 0.1, image: 'images/food/깍두기.png' },
+        { name: '동치미', desc: '무를 소금물에 절여 만든 시원하고 담백한 김치입니다.', engDesc: 'A refreshing and mild kimchi made with radish in salted water.', engName: 'Radish Water Kimchi', calories: 5.2, carbs: 1.2, protein: 0.2, fat: 0, image: 'images/food/동치미.png' }
     ],
     '후식': [
-        { name: '식혜', engName: 'Sweet Rice Punch', calories: 40, carbs: 10, protein: 0, fat: 0, image: 'images/food/식혜.png' },
-        { name: '미숫가루', engName: 'Roasted Grain Drink', calories: 398, carbs: 76.2, protein: 14.5, fat: 5.5, image: 'images/food/미숫가루.png' }
+        { name: '식혜', desc: '엿기름과 밥을 발효시켜 만든 달콤한 한국 전통 음료입니다.', engDesc: 'A sweet traditional Korean drink made by fermenting rice with malt.', engName: 'Sweet Rice Punch', calories: 40, carbs: 10, protein: 0, fat: 0, image: 'images/food/식혜.png' },
+        { name: '미숫가루', desc: '곡물을 갈아 만든 한국 전통 음료입니다.', engDesc: 'A nutty traditional Korean drink made from ground grains.', engName: 'Roasted Grain Drink', calories: 398, carbs: 76.2, protein: 14.5, fat: 5.5, image: 'images/food/미숫가루.png' }
     ]
 };
 
