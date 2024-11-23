@@ -1,6 +1,11 @@
 .header {
   padding-top: 10px;
+  padding-bottom: 20px;
   background-color: #5f93bf;
+}
+
+#home {
+  line-height: 2;
 }
 
 .header-title{
@@ -68,10 +73,12 @@ canvas {
 }
 
 .selected-tray {
-  background-image: url('../images/selected_diet.png');
-  background-size: cover;
+  background-color: #004AAD;
+  color: white;
+  border-radius: 25px;
   width: 235px;
   height: 55px;
-  text-indent: -99999px;
+  font-size: 23px;
+  line-height: 2.4;
   margin: 0 auto 50px;
 }

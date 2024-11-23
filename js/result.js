@@ -66,4 +66,25 @@ document.addEventListener("DOMContentLoaded", () => {
   } else {
     console.error("Tray image data not found!");
   }
+
+  const savedLanguage = localStorage.getItem("language") || "ko";
+	setLanguage(savedLanguage);
 });
+
+const translations = {
+	en: {
+		타이틀: "Self-selected K-school Meal Programs"
+		, 선택된_식단: "Your meal"
+	},
+	ko: {
+		타이틀: "자율선택급식 체험"
+		, 선택된_식단: "내가 선택한 식단"
+	}
+};
+
+function setLanguage(language) {
+	document.querySelectorAll("[data-i18n]").forEach(element => {
+		const key = element.getAttribute("data-i18n");
+		element.innerHTML = translations[language][key];
+	});
+}

@@ -1,5 +1,3 @@
-// main.js
-
 const categoriesDiv = document.getElementById('categories');
 const foodSelectionDiv = document.getElementById('foodSelection');
 const foodOptionsDiv = document.getElementById('foodOptions');
@@ -77,7 +75,11 @@ function showFoodOptions(category) {
         foodOptionsDiv.appendChild(button);
 
         const p = document.createElement('p');
-        p.textContent = `${food.name}`;
+        if (localStorage.getItem("language") == "ko") {
+            p.textContent = `${food.name}`;
+        } else {
+            p.textContent = `${food.engName}`;
+        }
         foodOptionsDescDiv.appendChild(p);
     });
 
@@ -323,3 +325,38 @@ document.getElementById('calculateCaloriesButton').addEventListener('click', asy
         alert(`모든 음식을 선택해주세요. \n선택되지 않은 항목 : ${unselectedCategories.join(", ")}`);
     }
 });
+
+const translations = {
+	en: {
+		타이틀: "Self-selected K-school Meal Programs"
+        , 밥: "Rice"
+        , 국: "Soup"
+        , 주찬: "Main dish"
+		, 부찬: "Side dish"
+		, 김치: "Kimchi"
+		, 후식: "Dessert"
+        , 계산하기_버튼: "Nutrition calculation"
+	},
+	ko: {
+		타이틀: "자율선택급식 체험"
+		, 밥: "밥"
+        , 국: "국"
+        , 주찬: "주찬"
+		, 부찬: "부찬"
+		, 김치: "김치"
+		, 후식: "후식"
+        , 계산하기_버튼: "영양량 계산하기"
+	}
+};
+
+document.addEventListener("DOMContentLoaded", () => {
+	const savedLanguage = localStorage.getItem("language") || "ko";
+	setLanguage(savedLanguage);
+});
+
+function setLanguage(language) {
+	document.querySelectorAll("[data-i18n]").forEach(element => {
+		const key = element.getAttribute("data-i18n");
+		element.innerHTML = translations[language][key];
+	});
+}

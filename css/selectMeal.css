@@ -57,11 +57,8 @@ h1 {
 
 .category button {
     background-color: #364974;
-    width: 120px;
+    width: 126px;
     color: white;
-}
-
-.category button:hover {
 }
 
 #tray {

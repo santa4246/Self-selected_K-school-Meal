@@ -3,6 +3,10 @@
   text-align: right;
 }
 
+.language-switch button:first-child {
+  background-position-y: 2px;
+}
+
 .language-switch button {
     background-repeat: no-repeat;
     width: 70px;
