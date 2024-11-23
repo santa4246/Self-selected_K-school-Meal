@@ -34,13 +34,17 @@ function modalAction(category) {
 
       if (localStorage.getItem("language") == "ko") {
         selectedFoodDesc.innerHTML = `${foodInfo.desc}`;
+        selectedFoodCalories.textContent = `열량(Kcal) : ${foodInfo.calories}`;
+        selectedFoodCarbs.textContent = `탄수화물(g) : ${foodInfo.carbs}`;
+        selectedFoodProtein.textContent = `단백질(g) : ${foodInfo.protein}`;
+        selectedFoodFat.textContent = `지방(g) : ${foodInfo.fat}`;
       } else {
         selectedFoodDesc.innerHTML = `${foodInfo.engDesc}`;
+        selectedFoodCalories.textContent = `Calories(Kcal) : ${foodInfo.calories}`;
+        selectedFoodCarbs.textContent = `Carbohydrate(g) : ${foodInfo.carbs}`;
+        selectedFoodProtein.textContent = `Protein(g) : ${foodInfo.protein}`;
+        selectedFoodFat.textContent = `Fat(g) : ${foodInfo.fat}`;
       }
-      selectedFoodCalories.textContent = `열량(Kcal) : ${foodInfo.calories}`;
-      selectedFoodCarbs.textContent = `탄수화물(g) : ${foodInfo.carbs}`;
-      selectedFoodProtein.textContent = `단백질(g) : ${foodInfo.protein}`;
-      selectedFoodFat.textContent = `지방(g) : ${foodInfo.fat}`;
     });
   });
 
@@ -53,21 +57,15 @@ function modalAction(category) {
       const category = document.querySelectorAll('.open-modal-btn')[selectedButtonId].getAttribute('data-btn-category');
       const food = document.querySelectorAll('.open-modal-btn')[selectedButtonId].getAttribute('data-btn-food');
       
-      // Remove any existing image from the same category before adding the new one
       const existingImage = document.querySelector(`img[data-category="${category}"]`);
       if (existingImage) {
           existingImage.remove();
       }
-  
-  
-      // Add the new item to the tray
       addToTray(category, food);
   
-      // Hide modal and overlay
       modal.style.display = 'none';
       overlay.style.display = 'none';
   
-      // Remove the click listener to ensure it only fires once per click
       document.getElementById('add-btn').removeEventListener('click', add_btn_listener);
     }
 }
