@@ -217,11 +217,14 @@ function updateTray() {
 
 // 총 열량 및 비율 계산
 document.getElementById('calculateCaloriesButton').addEventListener('click', () => {
+    let order = ['밥', '국', '주찬', '부찬', '김치', '후식'];
+
     let totalCalories = 0;
     let totalCarbs = 0;
     let totalProtein = 0;
     let totalFat = 0;
     let food_ = '';
+
 
     // 기존 비율 정보 제거
     const existingRatioDisplay = document.getElementById('ratioDisplay');
@@ -229,14 +232,17 @@ document.getElementById('calculateCaloriesButton').addEventListener('click', () 
         existingRatioDisplay.remove();
     }
 
-    Object.values(trayItems).forEach(item => {
-        food_ += item.name + ', '
-        totalCalories += item.calories;
-        totalCarbs += item.carbs;
-        totalProtein += item.protein;
-        totalFat += item.fat;
-    });
 
+    order.forEach(key => {
+        const item = trayItems[key];
+        if (item) {
+            food_ += item.name + ', ';
+            totalCalories += item.calories;
+            totalCarbs += item.carbs;
+            totalProtein += item.protein;
+            totalFat += item.fat;
+        }
+    });
 
 
     // 비율 계산
