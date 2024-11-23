@@ -95,13 +95,16 @@
 
 /* 모바일 세로 (해상도 ~ 479px)*/ 
 @media all and (max-width:479px) {
+  .title-desc-h1{
+    font-size: 24px;
+  }
   .container {
     width: 300px;
     margin: auto;
   }
 
   .language-switch {
-    margin-bottom: 170px;
+    margin-bottom: 100px;
   }
 
   .language-switch button {
@@ -130,7 +133,6 @@
   
   .contents-desc {
     font-size: 10px;
-    margin-bottom: 100px;
   }
   
   .produce-desc {

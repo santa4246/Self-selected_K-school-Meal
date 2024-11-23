@@ -45,11 +45,12 @@ document.addEventListener("DOMContentLoaded", () => {
 function setStyle(lang){
     let h1_size = document.getElementById('title-desc-h1');
     let title_desc = document.getElementById('title-desc');
+		let screenWidth = window.innerWidth;
 
-    if (lang === "ko") {
-        h1_size.style.fontSize = '90px';
-    } else {
-        h1_size.style.fontSize = '62px';
-        title_desc.style.marginBottom = '30px';
+    if (lang === "ko" && screenWidth > 479) {
+			h1_size.style.fontSize = '90px';
+    } else if (lang === "en" && screenWidth > 479){
+			h1_size.style.fontSize = '62px';
+			title_desc.style.marginBottom = '30px';
     }
 }

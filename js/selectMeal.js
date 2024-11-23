@@ -103,7 +103,6 @@ function addToTray(category, food) {
     let width, height;
     let coordinate_x, coordinate_y;
     let screenWidth = window.innerWidth;
-    console.log(screenWidth)
     if (screenWidth < 479) { // 모바일
         switch (category) {
             case "밥":
@@ -143,7 +142,7 @@ function addToTray(category, food) {
                 coordinate_y = '250px';
                 break;
             default:
-                alert('다시 선택해주세요.');
+                alert('다시 선택해주세요. (please try again)');
         }
     } else { // PC
         switch (category) {
@@ -322,7 +321,7 @@ document.getElementById('calculateCaloriesButton').addEventListener('click', asy
             console.error(error)
         }
     } else {
-        alert(`모든 음식을 선택해주세요. \n선택되지 않은 항목 : ${unselectedCategories.join(", ")}`);
+        alert(`음식을 모두 선택해주세요. \n(Please select all the food items.) \n\n선택되지 않은 항목 (Unselected items):\n${unselectedCategories.join(", ")}`);
     }
 });
 
