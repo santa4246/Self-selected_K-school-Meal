@@ -30,16 +30,16 @@
     <div id="foodSelection" class="food-selection">
         <div id="foodOptions"></div>
         <div id="foodOptionsDesc"></div>
+    
+        <div id="calories">
+            <button id="calculateCaloriesButton" data-i18n="계산하기_버튼"></button>
+        </div>
     </div>
 
     <div id="tray">
         <div id="trayItems"></div> <!-- 음식 이미지를 표시할 영역 -->
     </div>
     
-
-    <div id="calories">
-        <button id="calculateCaloriesButton" data-i18n="계산하기_버튼">영양량 계산하기</button>
-    </div>
 
 <!-- 모달 -->
 <div class="modal-overlay"></div>
@@ -61,7 +61,7 @@
         </ul>
     </div>
     <div class="modal-buttons">
-        <button id="add-btn">담기</button>
+        <button id="add-btn" data-i18n="담기_버튼"></button>
     </div>
 </div>
 
@@ -72,7 +72,7 @@
     <div class="error-modal_layout">
         <p id="error_modal_text" class="error_modal_text"></p>
     </div>
-    <button id="error-modal-cancel-btn">닫기</button>
+    <button id="error-modal-cancel-btn" data-i18n="닫기_버튼"></button>
 </div>
 
 <div id="result"></div>

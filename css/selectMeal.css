@@ -2,6 +2,7 @@ body {
     text-align: center;
     background-color: #f9f9f9; /* 부드러운 배경 색상 */
     color: #333; /* 기본 텍스트 색상 */
+    height: 100%;
 }
 
 .header {
@@ -89,16 +90,21 @@ h1 {
 }
 
 #calories {
-    position: absolute;
-    top: 850px;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    /* position: absolute;
+    top: 400px;
+    right: 0;
+    transform: translate(-50%, -50%); */
+    padding-left: 820px;
 }
 
 #calories button {
-    background-color: #004AAD;
-    color: white;
-    border-radius: 8px;
+    background-image: url('../images/nextBtn.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    padding-top: 115px;
+    width: 111px;
+    height: 111px;
+    font-size: 16px;
 }
 
 #calories button:hover {
@@ -121,13 +127,11 @@ h1 {
     cursor: pointer;
 }
 
-#foodOptions button:hover {
-    background-color: #bbdefb;
-}
-
 #foodOptionsDesc {
     display: flex;
     justify-content: center;
+    margin-bottom: 150px;
+    height: 20px;
 }
 #foodOptionsDesc p {
     width: 150px;

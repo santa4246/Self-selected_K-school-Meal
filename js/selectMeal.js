@@ -68,7 +68,8 @@ function showFoodOptions(category) {
         button.dataset.btnFood = JSON.stringify(food);
 
         // 옵션 버튼 클릭할 때마다 modalAction 호출
-        button.addEventListener('click', () => {
+        button.addEventListener('click', (e) => {
+            e.preventDefault();
             modalAction(category);
         });
 
@@ -105,6 +106,7 @@ function addToTray(category, food) {
     let width, height;
     let coordinate_x, coordinate_y;
     let screenWidth = window.innerWidth;
+    let zIndex;
     if (screenWidth < 479) { // 모바일
         switch (category) {
             case "밥":
@@ -140,8 +142,9 @@ function addToTray(category, food) {
             case "후식":
                 width = '80px';
                 height = '80px';
-                coordinate_x = '254px';
-                coordinate_y = '250px';
+                coordinate_x = '270px';
+                coordinate_y = '90px';
+                zIndex = "9999";
                 break;
             default:
                 alert('다시 선택해주세요. (please try again)');
@@ -179,10 +182,10 @@ function addToTray(category, food) {
                 coordinate_y = '30px';
                 break;
             case "후식":
-                width = '100px';
-                height = '100px';
-                coordinate_x = '530px';
-                coordinate_y = '160px';
+                width = '120px';
+                height = '120px';
+                coordinate_x = '520px';
+                coordinate_y = '150px';
                 break;
             default:
                 alert('다시 선택해주세요.');
@@ -200,6 +203,9 @@ function addToTray(category, food) {
         foodImage.style.left = coordinate_x;
         foodImage.style.top = coordinate_y;
         foodImage.style.margin = '5px';
+        if (zIndex) {
+            foodImage.style.zIndex = zIndex;
+        }
 
         foodImage.dataset.category = category;
 
@@ -346,7 +352,9 @@ const translations = {
 		, 부찬: "Side dish"
 		, 김치: "Kimchi"
 		, 후식: "Dessert"
-        , 계산하기_버튼: "Nutrition calculation"
+        , 계산하기_버튼: "<span style='display:block; margin-left: -70px; width:200px'>Nutrition calculation</span>"
+        , 담기_버튼: "Add"
+        , 닫기_버튼: "Close"
 	},
 	ko: {
 		타이틀: "자율선택급식 체험"
@@ -356,13 +364,18 @@ const translations = {
 		, 부찬: "부찬"
 		, 김치: "김치"
 		, 후식: "후식"
-        , 계산하기_버튼: "영양량 계산하기"
+        , 계산하기_버튼: "<span style='display:block; margin-left: -70px; width:200px'>영양량 계산하기</span>"
+        , 담기_버튼: "담기"
+        , 닫기_버튼: "닫기"
 	}
 };
 
 document.addEventListener("DOMContentLoaded", () => {
 	const savedLanguage = localStorage.getItem("language") || "ko";
 	setLanguage(savedLanguage);
+
+    const defaultButton = document.querySelector('.food[data-category="밥"]');
+    defaultButton.click();
 });
 
 function setLanguage(language) {
