@@ -104,10 +104,9 @@ const translations = {
 	en: {
 		타이틀: "Self-selected K-school Meal Programs"
 		, 선택된_식단: "Your meal"
-		, 설명: `The nutritional guidelines for K-school meal programs are based on the School Meal Act, and they are as follows :
-            <br>(1) The energy content should be within ±10% of the nutritional energy standard for school meals, with the energy ratio of carbohydrates to protein to fat set at 55-65%: 7-20%: 15-30%.
-            <br>(2) Protein should be provided in amounts exceeding the protein requirement in the school meal nutrition guidelines, but the proportion of protein energy in total energy should not exceed 20%.
-            <br>(3) Additionally, the menu is designed considering the intake of various micronutrients, such as vitamins and minerals.
+		, 설명: `The nutritional guidelines for K-school meal programs are based on<br>the School Meal Act, and they are as follows :
+            <br>(1) The energy content should be within ±10%,<br>with the energy ratio of carbohydrates to protein to fat set at 55-65%: 7-20%: 15-30%.
+            <br>(2) The menu is designed considering the intake of various micronutrients,<br>such as vitamins and minerals.
             <br>
             <br>In this way, school meals in Korea are structured to meet the nutritional needs necessary for students' growth and health, and to help develop healthy eating habits, following the School Meal Act.`
 	},
@@ -115,9 +114,8 @@ const translations = {
 		타이틀: "자율선택급식 체험"
 		, 선택된_식단: "내가 선택한 식단"
 		, 설명: `학교급식의 영양관리기준은 학교급식 기본 방향에 따라,
-            <br>(1) 에너지는 학교급식의 영양관리기준 에너지의 ±10%로 하되,<br>탄수화물: 단백질: 지방의 에너지 비율이 각각 55~65%: 7~20%: 15~30%가 되도록 구성하고 있습니다.
-            <br>(2) 단백질은 학교급식 영양관리기준의 단백질량 이상으로 공급하되,<br>총공급 에너지 중 단백질 에너지가 차지하는 비율이 20%를 넘지 않도록 구성하고 있습니다.
-            <br>(3) 그 외에도 비타민, 무기질 등 다양한 미량 영양소 섭취를 고려하여 식단을 구성하고 있습니다.
+            <br>(1) 에너지는 ±10%로, 탄수화물: 단백질: 지방의 비율이 각각 55~65%: 7~20%: 15~30%가 되도록 구성하고 있습니다.
+            <br>(2) 비타민, 무기질 등 다양한 미량 영양소 섭취를 고려하여 식단을 구성하고 있습니다.
             <br>
             <br>이렇게 한국의 학교급식은 학교급식법에 따라 학생의 발육과 건강에 필요한 영양을 충족하고<br>올바른 식생활습관 형성에 도움을 줄 수 있도록 다양한 식품으로 구성하고 있습니다.`
 	}

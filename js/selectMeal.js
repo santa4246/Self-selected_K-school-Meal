@@ -321,7 +321,7 @@ document.getElementById('calculateCaloriesButton').addEventListener('click', asy
             console.error(error)
         }
     } else {
-        alert(`음식을 모두 선택해주세요. \n(Please select all the food items.) \n\n선택되지 않은 항목 (Unselected items):\n${unselectedCategories.join(", ")}`);
+        alert(`음식을 모두 선택해주세요. \n(Please select all the food menu.) \n\n선택되지 않은 항목 (Unselected items):\n${unselectedCategories.join(", ")}`);
     }
 });
 
