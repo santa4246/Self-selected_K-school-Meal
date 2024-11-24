@@ -10,8 +10,8 @@ const translations = {
         , index_title2: "selected<br>"
         , index_title3: " K-school Meal Programs"
         , index_title4: " Experience"
-		, index_content_desc1: "Gyeonggido Office of Education policy that allows students to take the initiative in practicing healthy eating habits by providing a variety of diets suitable for each individual's necessary nutrition by expanding their agency and options"
-		, index_content_desc2: "Gyeonggido Office of Education policy that is the direction of development into future school meals and allows students to cultivate community-based and practical dietary management capabilities beyond individual meal management capabilities"
+		, index_content_desc1: "The Gyeonggido Office of Education policy expands students' agency and choices by offering diverse meal options, enabling them to actively practice healthy eating habits."
+		, index_content_desc2: "The Gyeonggido Office of Education policy helps students develop sustainable dietary management skills beyond individual meal management."
 		, index_produce: "Produced by nutrition teachers Seo Ah-ram, Cho Hyo-hyun, and Cha Seul-gi<br>/ Development advisor Kang Min-hyeok"
 	},
 	ko: {
