@@ -3,9 +3,9 @@
   text-align: right;
 }
 
-.language-switch button:first-child {
+/* .language-switch button:first-child {
   background-position-y: 2px;
-}
+} */
 
 .language-switch button {
     background-repeat: no-repeat;
