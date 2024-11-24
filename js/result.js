@@ -103,7 +103,7 @@ document.addEventListener("DOMContentLoaded", () => {
 const translations = {
 	en: {
 		타이틀: "Self-selected K-school Meal Programs"
-		, 선택된_식단: "Your meal"
+		, 선택된_식단: "Your Meal"
 		, 설명: `The nutritional guidelines for K-school meal programs are based on<br>the School Meal Act, and they are as follows :
             <br>(1) The energy content should be within ±10%,<br>with the energy ratio of carbohydrates to protein to fat set at 55-65%: 7-20%: 15-30%.
             <br>(2) The menu is designed considering the intake of various micronutrients,<br>such as vitamins and minerals.

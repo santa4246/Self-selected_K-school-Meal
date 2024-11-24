@@ -330,7 +330,7 @@ document.getElementById('calculateCaloriesButton').addEventListener('click', asy
         });
 
         // 경고 메시지 출력
-        alert(`음식을 모두 선택해주세요. \n(Please select all the food menu.) \n\n선택되지 않은 항목 (Unselected items):\n${translatedCategories.join(", ")}`);
+        alert(`음식을 모두 선택해주세요. \n(Please select all the food menu.) \n\n선택되지 않은 항목 (Unselected menu):\n${translatedCategories.join(", ")}`);
     }
 });
 
