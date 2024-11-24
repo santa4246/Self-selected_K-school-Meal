@@ -321,7 +321,16 @@ document.getElementById('calculateCaloriesButton').addEventListener('click', asy
             console.error(error)
         }
     } else {
-        alert(`음식을 모두 선택해주세요. \n(Please select all the food menu.) \n\n선택되지 않은 항목 (Unselected items):\n${unselectedCategories.join(", ")}`);
+        // 현재 언어 가져오기
+        const currentLanguage = localStorage.getItem("language") || "ko";
+
+        // 선택되지 않은 카테고리를 번역
+        const translatedCategories = unselectedCategories.map(category => {
+            return translations[currentLanguage][category] || category;
+        });
+
+        // 경고 메시지 출력
+        alert(`음식을 모두 선택해주세요. \n(Please select all the food menu.) \n\n선택되지 않은 항목 (Unselected items):\n${translatedCategories.join(", ")}`);
     }
 });
 
