@@ -80,3 +80,34 @@ function modalAction(category) {
     overlay.style.display = 'none';
   }
 }
+
+function errorModal(translatedCategories) {
+    const errModal = document.querySelector('.error-modal');
+    const errModalOverlay = document.querySelector('.error-modal-overlay');
+    const errModalText = document.getElementById('error_modal_text');
+    document.getElementById('error-modal-cancel-btn').removeEventListener('click', error_modal_cancle_btn_listener);
+    document.getElementById('error-modal-cancel-btn').addEventListener('click', error_modal_cancle_btn_listener), { once: true };
+    errModalOverlay.removeEventListener('click', error_modal_overlay_click_listener);
+    errModalOverlay.addEventListener('click', error_modal_overlay_click_listener), { once: true };
+    
+    function error_modal_cancle_btn_listener() {
+        errModal.style.display = 'none';
+        errModalOverlay.style.display = 'none';
+    }
+
+    function error_modal_overlay_click_listener() {
+        errModal.style.display = 'none';
+        errModalOverlay.style.display = 'none';
+    }
+
+    if (localStorage.getItem("language") == "ko") {
+        errModalText.innerHTML = `음식을 모두 선택해주세요.<br><br>선택되지 않은 항목:<br>${translatedCategories.join(", ")}`
+    } else {
+        errModalText.innerHTML = `Please select all the food menu.<br><br>Unselected menu:<br>${translatedCategories.join(", ")}`
+    }
+
+    
+
+    errModal.style.display = 'block';
+    errModalOverlay.style.display = 'block';
+}

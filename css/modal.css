@@ -1,4 +1,4 @@
-.modal {
+.modal, .error-modal {
     position: absolute;
     display: none;
     top: 280px;
@@ -84,12 +84,38 @@
     transition: opacity 0.3s;
 }
 
+.error-modal-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+    transition: opacity 0.3s;
+}
+
 .modal-buttons {
     position: absolute;
     bottom: 20px;
     left: 500px;
 }
 
+.error-modal_layout {
+    margin-bottom: 60px;
+}
+
+#error-modal-cancel-btn {
+    background-color: #004AAD;
+    border: 1px solid #000;
+    border-radius: 8px;
+    font-size: 16px;
+    width: 130px;
+    height: 44px;
+    color: white;
+    text-indent: 0px;
+}
 
 /* 노트북 & 태블릿 가로 (해상도 1024px ~ 1279px)*/ 
 @media all and (min-width:1024px) and (max-width:1279px) { 

@@ -77,8 +77,10 @@ function showFoodOptions(category) {
         const p = document.createElement('p');
         if (localStorage.getItem("language") == "ko") {
             p.textContent = `${food.name}`;
+            foodOptionsDescDiv.style.fontSize = '18px';
         } else {
             p.textContent = `${food.engName}`;
+            foodOptionsDescDiv.style.fontSize = '14px';
         }
         foodOptionsDescDiv.appendChild(p);
     });
@@ -330,7 +332,8 @@ document.getElementById('calculateCaloriesButton').addEventListener('click', asy
         });
 
         // 경고 메시지 출력
-        alert(`음식을 모두 선택해주세요. \n(Please select all the food menu.) \n\n선택되지 않은 항목 (Unselected menu):\n${translatedCategories.join(", ")}`);
+        errorModal(translatedCategories);
+        // alert(`음식을 모두 선택해주세요. \n(Please select all the food menu.) \n\n선택되지 않은 항목 (Unselected menu):\n${translatedCategories.join(", ")}`);
     }
 });
 
