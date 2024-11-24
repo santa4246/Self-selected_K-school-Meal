@@ -1,9 +1,3 @@
-document.getElementById('mainButton').addEventListener('click', () => {
-  // 식단 선택 페이지로 이동
-  window.location.href = 'selectMeal.html';
-});
-
-
 const translations = {
 	en: {
 		index_title1: "Self-"
@@ -36,6 +30,11 @@ function setLanguage(language) {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
+    document.getElementById('mainButton').addEventListener('click', () => {
+        // 식단 선택 페이지로 이동
+        window.location.href = 'selectMeal.html';
+    });
+
 	const savedLanguage = localStorage.getItem("language") || "ko";
 	setStyle(savedLanguage);
     
@@ -45,12 +44,20 @@ document.addEventListener("DOMContentLoaded", () => {
 function setStyle(lang){
     let h1_size = document.getElementById('title-desc-h1');
     let title_desc = document.getElementById('title-desc');
-		let screenWidth = window.innerWidth;
+    let screenWidth = window.innerWidth;
+    let contents_desc = document.getElementById('contents-desc');
+    let mainButton = document.getElementById('mainButton');
+
 
     if (lang === "ko" && screenWidth > 479) {
-			h1_size.style.fontSize = '90px';
+        h1_size.style.fontSize = '90px';
+        title_desc.style.marginBottom = '54px';
+        contents_desc.style.marginBottom = '40px';
+        mainButton.style.marginBottom = '55px';
     } else if (lang === "en" && screenWidth > 479){
-			h1_size.style.fontSize = '62px';
-			title_desc.style.marginBottom = '30px';
+        h1_size.style.fontSize = '50px';
+        title_desc.style.marginBottom = '30px';
+        contents_desc.style.marginBottom = '15px';
+        mainButton.style.marginBottom = '15px';
     }
 }
