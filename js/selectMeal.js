@@ -155,37 +155,37 @@ function addToTray(category, food) {
                 width = '195px';
                 height = '195px';
                 coordinate_x = '30px';
-                coordinate_y = '137px';
+                coordinate_y = '146px';
                 break;
             case "국":
                 width = '195px';
                 height = '195px';
                 coordinate_x = '250px';
-                coordinate_y = '137px';
+                coordinate_y = '146px';
                 break;
             case "주찬":
                 width = '155px';
                 height = '155px';
                 coordinate_x = '160px';
-                coordinate_y = '11px';
+                coordinate_y = '20px';
                 break;
             case "부찬":
                 width = '126px';
                 height = '126px';
                 coordinate_x = '30px';
-                coordinate_y = '7px';
+                coordinate_y = '16px';
                 break;
             case "김치":
                 width = '131px';
                 height = '131px';
                 coordinate_x = '316px';
-                coordinate_y = '5px';
+                coordinate_y = '14px';
                 break;
             case "후식":
                 width = '90px';
                 height = '90px';
                 coordinate_x = '405px';
-                coordinate_y = '100px';
+                coordinate_y = '109px';
                 break;
             default:
                 alert('다시 선택해주세요.');
