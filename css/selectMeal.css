@@ -6,7 +6,6 @@ body {
 }
 
 .header {
-    padding-top: 10px;
     background-color: #5f93bf;
 }
 
@@ -28,22 +27,18 @@ h1 {
 }
 
 #tray, #calories {
-    margin: 20px auto;
+    margin: auto;
 }
 
 #selectedFoodDesc {
     text-align: center;
 }
 
-.food-selection {
-    margin-bottom: 400px;
-}
-
 .category {
     display: flex;
     justify-content: center;
     gap: 15px;
-    margin-top: 30px;
+    margin-top: 20px;
 }
 
 .category button, .food-selection button, #calories button {
@@ -64,23 +59,23 @@ h1 {
 
 #tray {
     position: absolute;
-    top: 610px;
+    top: 550px;
     left: 50%;
     transform: translate(-50%, -50%);
     background-image: url('../images/tray-background.png');
     background-size: cover;
     background-position: center;
     padding: 20px;
-    width: 600px;
-    height: 500px;
+    width: 450px;
+    height: 350px;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
 #trayItems {
-    width: 600px;
-    height: 500px;
+    width: 450px;
+    height: 350px;
 }
 
 #tray h3 {
@@ -90,20 +85,18 @@ h1 {
 }
 
 #calories {
-    /* position: absolute;
+    position: absolute;
     top: 400px;
-    right: 0;
-    transform: translate(-50%, -50%); */
-    padding-left: 820px;
+    padding-left: 870px;
 }
 
 #calories button {
     background-image: url('../images/nextBtn.png');
     background-size: contain;
     background-repeat: no-repeat;
-    padding-top: 115px;
-    width: 111px;
-    height: 111px;
+    padding-top: 100px;
+    width: 90px;
+    height: 90px;
     font-size: 16px;
 }
 

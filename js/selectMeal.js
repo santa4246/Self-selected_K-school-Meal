@@ -152,40 +152,40 @@ function addToTray(category, food) {
     } else { // PC
         switch (category) {
             case "밥":
-                width = '250px';
-                height = '250px';
-                coordinate_x = '40px';
-                coordinate_y = '200px';
+                width = '195px';
+                height = '195px';
+                coordinate_x = '30px';
+                coordinate_y = '137px';
                 break;
             case "국":
-                width = '250px';
-                height = '250px';
-                coordinate_x = '330px';
-                coordinate_y = '200px';
+                width = '195px';
+                height = '195px';
+                coordinate_x = '250px';
+                coordinate_y = '137px';
                 break;
             case "주찬":
-                width = '200px';
-                height = '200px';
-                coordinate_x = '210px';
-                coordinate_y = '35px';
+                width = '155px';
+                height = '155px';
+                coordinate_x = '160px';
+                coordinate_y = '11px';
                 break;
             case "부찬":
-                width = '160px';
-                height = '160px';
-                coordinate_x = '45px';
-                coordinate_y = '30px';
+                width = '126px';
+                height = '126px';
+                coordinate_x = '30px';
+                coordinate_y = '7px';
                 break;
             case "김치":
-                width = '160px';
-                height = '160px';
-                coordinate_x = '420px';
-                coordinate_y = '30px';
+                width = '131px';
+                height = '131px';
+                coordinate_x = '316px';
+                coordinate_y = '5px';
                 break;
             case "후식":
-                width = '120px';
-                height = '120px';
-                coordinate_x = '520px';
-                coordinate_y = '150px';
+                width = '90px';
+                height = '90px';
+                coordinate_x = '405px';
+                coordinate_y = '100px';
                 break;
             default:
                 alert('다시 선택해주세요.');
@@ -352,7 +352,7 @@ const translations = {
 		, 부찬: "Side dish"
 		, 김치: "Kimchi"
 		, 후식: "Dessert"
-        , 계산하기_버튼: "<span style='display:block; margin-left: -70px; width:200px'>Nutrition calculation</span>"
+        , 계산하기_버튼: "<span style='display:block; margin-left: -77px; width:200px'>Nutrition calculation</span>"
         , 담기_버튼: "Add"
         , 닫기_버튼: "Close"
 	},
@@ -364,7 +364,7 @@ const translations = {
 		, 부찬: "부찬"
 		, 김치: "김치"
 		, 후식: "후식"
-        , 계산하기_버튼: "<span style='display:block; margin-left: -70px; width:200px'>영양량 계산하기</span>"
+        , 계산하기_버튼: "<span style='display:block; margin-left: -77px; width:200px'>영양량 계산하기</span>"
         , 담기_버튼: "담기"
         , 닫기_버튼: "닫기"
 	}

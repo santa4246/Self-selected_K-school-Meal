@@ -1,11 +1,11 @@
 .header {
-  padding-top: 10px;
-  padding-bottom: 20px;
+  padding-top: 0;
+  padding-bottom: 10px;
   background-color: #5f93bf;
 }
 
 #home {
-  line-height: 2;
+  line-height: 2.2;
 }
 
 .header-title{
@@ -27,7 +27,7 @@ h1 {
 
 canvas {
   display: block;
-  max-width: 400px;
+  max-width: 340px;
   width: 100%;
   height: auto;
 }
@@ -35,7 +35,7 @@ canvas {
 .chart-container {
   position: relative;
   width: 100%;
-  max-width: 400px;
+  max-width: 340px;
 }
 
 .chart-center-text {
@@ -49,13 +49,13 @@ canvas {
 }
 
 .asset-layout {
-  height: 400px;
-  margin-bottom: 50px;
+  height: 340px;
+  margin-bottom: 20px;
 }
 
 .asset-container {
   width: 50%;
-  height: 400px;
+  height: 340px;
   float: left;
 }
 
@@ -66,7 +66,7 @@ canvas {
 .selected-tray-container {
   background-color: #fff;
   width: 1000px;
-  margin: 30px auto 0;
+  margin: auto;
   padding: 30px;
   box-sizing: border-box;
 }
@@ -80,6 +80,10 @@ canvas {
   font-size: 23px;
   line-height: 2.4;
   margin: 0 auto 50px;
+}
+
+.desc {
+  font-size: 16px;
 }
 
 
