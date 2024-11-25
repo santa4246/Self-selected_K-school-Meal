@@ -87,7 +87,7 @@ h1 {
 #calories {
     position: absolute;
     top: 400px;
-    padding-left: 870px;
+    right: 5%;
 }
 
 #calories button {
