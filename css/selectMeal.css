@@ -67,7 +67,7 @@ h1 {
     background-position: center;
     padding: 20px;
     width: 450px;
-    height: 350px;
+    height: 369px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -75,7 +75,7 @@ h1 {
 
 #trayItems {
     width: 450px;
-    height: 350px;
+    height: 369px;
 }
 
 #tray h3 {
